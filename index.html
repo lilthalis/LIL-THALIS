@@ -1,313 +1,208 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lilthalis — official site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIL THALIS — Official Site</title>
+  <style>
+    /* ====== STYLE DARK VIBE ====== */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap');
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="theme-color" content="#7E5BEF" />
+    body {
+      background-color: #0e0e10;
+      color: #e0e0e0;
+      font-family: 'Roboto Mono', monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 0 0 15px #ff99cc;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff99cc;
+    }
+
+    section {
+      padding: 50px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #ff99cc;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border: 1px solid #ff99cc;
+      color: #ff99cc;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff99cc;
+      color: #0e0e10;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #222;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    /* ====== LANGUAGE SWITCH ====== */
+    .lang-switch {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: 1px solid #555;
+      color: #bbb;
+      margin: 0 5px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .lang-switch button:hover {
+      border-color: #ff99cc;
+      color: #ff99cc;
+    }
+
+    /* FADE EFFECT */
+    .fade {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Lilthalis home">
-        <span class="brand-mark">LT</span>
-        <span class="brand-word">Lilthalis</span>
-      </a>
-
-      <nav class="main-nav">
-        <a href="#music" data-i18n="nav_music">Music</a>
-        <a href="#lyrics" data-i18n="nav_lyrics">Lyrics</a>
-        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
-        <a href="#contact" data-i18n="nav_contact">Contact</a>
-      </nav>
-
-      <div class="lang-switch" role="group" aria-label="Language switch">
-        <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
-        <button class="lang-btn" data-lang="pt">PT</button>
-        <button class="lang-btn" data-lang="it">IT</button>
-      </div>
-    </div>
+  <header class="fade">
+    <h1>LIL THALIS</h1>
+    <nav>
+      <a href="#music" data-en="Music" data-pt="Músicas" data-it="Musica">Music</a>
+      <a href="#lyrics" data-en="Lyrics" data-pt="Letras" data-it="Testi">Lyrics</a>
+      <a href="#gallery" data-en="Gallery" data-pt="Galeria" data-it="Galleria">Gallery</a>
+      <a href="#contact" data-en="Contact" data-pt="Contato" data-it="Contatto">Contact</a>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="container hero-content">
-      <h1 class="logo-type">LIL THALIS</h1>
-      <p class="tagline" data-i18n="tagline">
-        Between ache and dream, I found a sound that kept me alive.
-      </p>
+  <section id="intro" class="fade">
+    <p data-en="Between ache and dream, I found a sound that kept me alive."
+       data-pt="Entre a dor e o sonho, encontrei um som que me manteve vivo."
+       data-it="Tra dolore e sogno, ho trovato un suono che mi ha tenuto in vita.">
+      Between ache and dream, I found a sound that kept me alive.
+    </p>
 
-      <div class="cta-row">
-        <a href="#music" class="btn primary" data-i18n="cta_listen">Listen now</a>
-        <a href="#lyrics" class="btn ghost" data-i18n="cta_read">Read the words</a>
-      </div>
-
-      <div class="socials">
-        <!-- Troca os # pelos teus links quando quiser -->
-        <a href="https://youtube.com/@lilthalisoficial?si=Nfzt9qQsoMmcW3-1" aria-label="YouTube">YouTube</a>
-        <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g" aria-label="Spotify">Spotify</a>
-        <a href="https://www.instagram.com/lilthalis?igsh=cWVsMnBmc2k2c2p5"</a>
-        <a href="https://www.tiktok.com/@lilthalis?_t=ZM-90t7nc7jRN6&_r=1" aria-label="TikTok">TikTok</a>
-      </div>
+    <div>
+      <a href="#music" class="btn" data-en="Listen now" data-pt="Ouvir agora" data-it="Ascolta ora">Listen now</a>
+      <a href="#lyrics" class="btn" data-en="Read the words" data-pt="Ler as letras" data-it="Leggi i testi">Read the words</a>
     </div>
   </section>
 
-  <!-- MUSIC -->
-  <section id="music" class="section">
-    <div class="container">
-      <h2 data-i18n="sec_music">Music</h2>
-      <p class="section-lead" data-i18n="music_lead">
-        New drops, rough demos and midnight ideas.
-      </p>
+  <section id="music" class="fade">
+    <h2 data-en="Music" data-pt="Músicas" data-it="Musica">Music</h2>
+    <p data-en="New drops, rough demos and midnight ideas."
+       data-pt="Novos lançamentos, rascunhos e ideias da madrugada."
+       data-it="Nuove uscite, demo grezzi e idee di mezzanotte.">
+       New drops, rough demos and midnight ideas.
+    </p>
 
-      <div class="grid cards">
-        <!-- Card 1 -->
-        <article class="card">
-          <div class="card-art" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Weird Hair</h3>
-            <p data-i18n="track_caption_1">
-              A late-night confession with neon lights and rain on glass.
-            </p>
-            <!-- Substitui por embeds reais quando tiver: -->
-            <div class="player-placeholder" data-i18n="player">
-              Player/Link here (YouTube/Spotify/SoundCloud)
-            </div>
-          </div>
-        </article>
+    <p><strong>Weird Hair</strong> — Confession under late neon and rain.</p>
+    <p><strong>Bleach Me</strong> — Lowering the noise to hear the heart.</p>
 
-        <!-- Card 2 -->
-        <article class="card">
-          <div class="card-art alt" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Bleach Me</h3>
-            <p data-i18n="track_caption_2">
-              Turning the noise down to hear the heart beat.
-            </p>
-            <div class="player-placeholder" data-i18n="player">
-              Player/Link here (YouTube/Spotify/SoundCloud)
-            </div>
-          </div>
-        </article>
-      </div>
+    <div>
+      <a href="#" class="btn">YouTube</a>
+      <a href="#" class="btn">Spotify</a>
+      <a href="#" class="btn">TikTok</a>
     </div>
   </section>
 
-  <!-- LYRICS -->
-  <section id="lyrics" class="section">
-    <div class="container">
-      <h2 data-i18n="sec_lyrics">Lyrics & Poems</h2>
-      <p class="section-lead" data-i18n="lyrics_lead">
-        Raw pages from the notebook — bilingual drops.
-      </p>
-
-      <details class="lyric">
-        <summary>Weird Hair — <span data-i18n="open_lyrics">open lyrics</span></summary>
-<pre>
-(Intro)
-Yeah…
-Another night, same weight, same light
-Mirror eyes don’t recognize the guy
-She says she loves me with my weird hair
-But even she can’t read what’s hiding there
-
-(Chorus)
-You say you love my scars, babe
-But they cut deeper than you think
-I don’t wanna be a star, babe
-Just need a minute and a drink
-Lost angels in the city beams,
-Kisses tangle with the street sins
-I’m locked inside your dark eyes,
-Feel nothing under my skin
-</pre>
-      </details>
-
-      <details class="lyric">
-        <summary>Bleach Me — <span data-i18n="open_lyrics">open lyrics</span></summary>
-<pre>
-Bleach my thoughts so I can sleep,
-Turn down the ghosts that never leave.
-If I disappear, don’t say a prayer —
-just play the song and leave it there.
-</pre>
-      </details>
-    </div>
+  <section id="lyrics" class="fade">
+    <h2 data-en="Lyrics & Poems" data-pt="Letras & Poemas" data-it="Testi e Poesie">Lyrics & Poems</h2>
+    <p data-en="Raw pages from the notebook — bilingual versions."
+       data-pt="Páginas cruas do caderno — versões bilíngues."
+       data-it="Pagine grezze dal quaderno — versioni bilingue.">
+       Raw pages from the notebook — bilingual versions.
+    </p>
   </section>
 
-  <!-- GALLERY -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <h2 data-i18n="sec_gallery">Gallery</h2>
-      <p class="section-lead" data-i18n="gallery_lead">
-        Film grain, soft noise, honest frames.
-      </p>
-
-      <div class="grid gallery-grid">
-        <figure class="shot"><img src="" alt="Stage lights over a crowd"/></figure>
-        <figure class="shot"><img src="" alt="Close-up portrait in low light"/></figure>
-        <figure class="shot"><img src="" alt="Neon sign in the rain"/></figure>
-      </div>
-    </div>
+  <section id="gallery" class="fade">
+    <h2 data-en="Gallery" data-pt="Galeria" data-it="Galleria">Gallery</h2>
+    <p data-en="Visual fragments of emotion and night."
+       data-pt="Fragmentos visuais da emoção e da noite."
+       data-it="Frammenti visivi di emozione e notte.">
+       Visual fragments of emotion and night.
+    </p>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 data-i18n="sec_contact">Contact</h2>
-      <p class="section-lead" data-i18n="contact_lead">
-        Bookings, collabs or just say hi.
-      </p>
-
-      <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
-        <label>
-          <span data-i18n="form_name">Your name</span>
-          <input type="text" name="name" required />
-        </label>
-
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required />
-        </label>
-
-        <label>
-          <span data-i18n="form_msg">Message</span>
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-
-        <button class="btn primary" type="submit" data-i18n="form_send">Send</button>
-        <p class="form-note" data-i18n="form_note">
-          By sending, you agree to be contacted back. No spam — ever.
-        </p>
-      </form>
-    </div>
+  <section id="contact" class="fade">
+    <h2 data-en="Socials" data-pt="Redes Sociais" data-it="Social">Socials</h2>
+    <p><a href="#" id="insta" class="btn">Instagram</a>
+       <a href="#" id="yt" class="btn">YouTube</a>
+       <a href="#" id="spfy" class="btn">Spotify</a>
+       <a href="#" id="tktk" class="btn">TikTok</a></p>
   </section>
 
-  <footer class="site-footer">
-    <div class="container foot">
-      <p>© <span id="year"></span> Leotales — <span data-i18n="rights">all rights reserved</span>.</p>
-      <p class="small">
-        <span data-i18n="built">Built with love & pain</span> · <a href="#home">↑</a>
-      </p>
-    </div>
+  <div class="lang-switch">
+    <button onclick="switchLang('en')">🇬🇧 English</button>
+    <button onclick="switchLang('pt')">🇧🇷 Português</button>
+    <button onclick="switchLang('it')">🇮🇹 Italiano</button>
+  </div>
+
+  <footer>
+    <p>© 2025 Lil Thalis — Between ache and dream.</p>
   </footer>
 
-  <!-- Language + small helpers -->
   <script>
-    // year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // i18n dictionary
-    const I18N = {
-      en: {
-        nav_music: "Music",
-        nav_lyrics: "Lyrics",
-        nav_gallery: "Gallery",
-        nav_contact: "Contact",
-        tagline: "Between ache and dream, I found a sound that kept me alive.",
-        cta_listen: "Listen now",
-        cta_read: "Read the words",
-        sec_music: "Music",
-        music_lead: "New drops, rough demos and midnight ideas.",
-        track_caption_1: "A late-night confession with neon lights and rain on glass.",
-        track_caption_2: "Turning the noise down to hear the heart beat.",
-        player: "Player/Link here (YouTube/Spotify/SoundCloud)",
-        sec_lyrics: "Lyrics & Poems",
-        lyrics_lead: "Raw pages from the notebook — bilingual drops.",
-        open_lyrics: "open lyrics",
-        sec_gallery: "Gallery",
-        gallery_lead: "Film grain, soft noise, honest frames.",
-        sec_contact: "Contact",
-        contact_lead: "Bookings, collabs or just say hi.",
-        form_name: "Your name",
-        form_msg: "Message",
-        form_send: "Send",
-        form_note: "By sending, you agree to be contacted back. No spam — ever.",
-        rights: "all rights reserved",
-        built: "Built with love & pain"
-      },
-      pt: {
-        nav_music: "Músicas",
-        nav_lyrics: "Letras",
-        nav_gallery: "Galeria",
-        nav_contact: "Contato",
-        tagline: "Entre dor e sonho, encontrei um som que me manteve vivo.",
-        cta_listen: "Ouvir agora",
-        cta_read: "Ler as letras",
-        sec_music: "Músicas",
-        music_lead: "Lançamentos, rascunhos e ideias da madrugada.",
-        track_caption_1: "Confissão tardia sob neon e chuva no vidro.",
-        track_caption_2: "Abaixando o ruído pra ouvir o coração.",
-        player: "Player/Link aqui (YouTube/Spotify/SoundCloud)",
-        sec_lyrics: "Letras & Poemas",
-        lyrics_lead: "Páginas cruas do caderno — versões bilíngues.",
-        open_lyrics: "abrir letras",
-        sec_gallery: "Galeria",
-        gallery_lead: "Grão de filme, ruído suave, quadros sinceros.",
-        sec_contact: "Contato",
-        contact_lead: "Shows, collabs ou só dar um oi.",
-        form_name: "Seu nome",
-        form_msg: "Mensagem",
-        form_send: "Enviar",
-        form_note: "Ao enviar, você concorda em ser contatado. Sem spam — nunca.",
-        rights: "todos os direitos reservados",
-        built: "Feito com amor & dor"
-      },
-      it: {
-        nav_music: "Musica",
-        nav_lyrics: "Testi",
-        nav_gallery: "Galleria",
-        nav_contact: "Contatti",
-        tagline: "Tra dolore e sogno ho trovato un suono che mi ha tenuto vivo.",
-        cta_listen: "Ascolta ora",
-        cta_read: "Leggi i testi",
-        sec_music: "Musica",
-        music_lead: "Nuove uscite, demo grezze e idee di mezzanotte.",
-        track_caption_1: "Una confessione notturna tra neon e pioggia sul vetro.",
-        track_caption_2: "Abbasso il rumore per sentire il battito.",
-        player: "Player/Link qui (YouTube/Spotify/SoundCloud)",
-        sec_lyrics: "Testi & Poesie",
-        lyrics_lead: "Pagine crude dal taccuino — in più lingue.",
-        open_lyrics: "apri testo",
-        sec_gallery: "Galleria",
-        gallery_lead: "Grana analogica, rumore dolce, scatti sinceri.",
-        sec_contact: "Contatti",
-        contact_lead: "Booking, collaborazioni o solo un saluto.",
-        form_name: "Il tuo nome",
-        form_msg: "Messaggio",
-        form_send: "Invia",
-        form_note: "Inviando, accetti di essere ricontattato. Niente spam.",
-        rights: "tutti i diritti riservati",
-        built: "Costruito con amore & dolore"
-      }
-    };
-
-    const setLang = (lang) => {
-      const dict = I18N[lang] || I18N.en;
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (dict[key]) el.textContent = dict[key];
+    // ====== MULTILANGUAGE SWITCH ======
+    function switchLang(lang) {
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
       });
-      document.querySelectorAll(".lang-btn").forEach(btn=>{
-        btn.setAttribute("aria-pressed", btn.dataset.lang===lang ? "true" : "false");
-      });
-      localStorage.setItem("leotales_lang", lang);
-      document.documentElement.lang = lang;
-    };
-
-    // init
-    const saved = localStorage.getItem("leotales_lang") || (navigator.language||"en").slice(0,2);
-    setLang(["en","pt","it"].includes(saved) ? saved : "en");
-
-    document.querySelectorAll(".lang-btn").forEach(btn=>{
-      btn.addEventListener("click", ()=> setLang(btn.dataset.lang));
-    });
+    }
   </script>
 </body>
 </html>
