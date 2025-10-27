@@ -1,2 +1,2 @@
-# LIL-THALIS
+# lilthalis
 Lil Thalis Official Site
