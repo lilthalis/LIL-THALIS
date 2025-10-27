@@ -25,10 +25,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      background: transparent;
       position: fixed;
       width: 100%;
       top: 0;
+      background-color: rgba(255,255,255,0.9);
+      backdrop-filter: blur(6px);
       z-index: 10;
     }
 
@@ -44,10 +45,11 @@
     }
 
     .icons img {
-      width: 25px;
-      height: 25px;
+      width: 28px;
+      height: 28px;
       cursor: pointer;
       transition: transform 0.2s;
+      border-radius: 5px;
     }
 
     .icons img:hover {
@@ -94,11 +96,6 @@
       text-align: center;
     }
 
-    .about img, .music img, .gallery img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
     .bio {
       max-width: 700px;
       margin: 0 auto;
@@ -130,36 +127,34 @@
       color: #ff66aa;
       text-decoration: none;
     }
-
   </style>
 </head>
 <body>
   <header>
     <h1>LIL THALIS</h1>
     <div class="icons">
-      <img src="https://flagcdn.com/w20/gb.png" alt="English" title="English">
-      <img src="https://flagcdn.com/w20/br.png" alt="Português" title="Português">
-      <img src="https://flagcdn.com/w20/it.png" alt="Italiano" title="Italiano">
+      <img src="https://flagcdn.com/w20/gb.png" alt="English" title="English" onclick="changeLanguage('en')">
+      <img src="https://flagcdn.com/w20/br.png" alt="Português" title="Português" onclick="changeLanguage('pt')">
+      <img src="https://flagcdn.com/w20/it.png" alt="Italiano" title="Italiano" onclick="changeLanguage('it')">
       <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Store" title="Store">
     </div>
   </header>
 
   <section class="hero">
-    <h2>Even If You Don’t Love Me</h2>
-    <button>Listen Now</button>
+    <h2 id="hero-title">Even If You Don’t Love Me</h2>
+    <button id="hero-btn">Listen Now</button>
   </section>
 
   <section class="about">
-    <h2>About LIL THALIS</h2>
-    <p class="bio">
-      LIL THALIS é um cantor e compositor que transforma sentimentos em arte.
-      Misturando melancolia e esperança, suas músicas refletem a dor, os sonhos e o amor
-      de uma geração que sente demais.
+    <h2 id="about-title">About LIL THALIS</h2>
+    <p class="bio" id="about-text">
+      LIL THALIS is a singer and songwriter who transforms feelings into art.
+      Mixing melancholy and hope, his songs reflect the pain, dreams, and love of a generation that feels too much.
     </p>
   </section>
 
   <section class="music">
-    <h2>Music</h2>
+    <h2 id="music-title">Music</h2>
     <div class="socials">
       <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g" target="_blank">Spotify</a>
       <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw" target="_blank">YouTube</a>
@@ -169,13 +164,63 @@
   </section>
 
   <section class="gallery">
-    <h2>Gallery</h2>
-    <p>Em breve, fotos e memórias do processo criativo...</p>
+    <h2 id="gallery-title">Gallery</h2>
+    <p id="gallery-text">Soon, photos and memories of the creative process...</p>
   </section>
 
   <footer>
-    <p>© 2025 LIL THALIS — Designed with ❤️ Lil Thalis</p>
+    <p>© 2025 LIL THALIS — Designed with ❤️ by Irmão</p>
     <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        heroTitle: "Even If You Don’t Love Me",
+        heroBtn: "Listen Now",
+        aboutTitle: "About LIL THALIS",
+        aboutText: "LIL THALIS is a singer and songwriter who transforms feelings into art. Mixing melancholy and hope, his songs reflect the pain, dreams, and love of a generation that feels too much.",
+        musicTitle: "Music",
+        galleryTitle: "Gallery",
+        galleryText: "Soon, photos and memories of the creative process..."
+      },
+      pt: {
+        heroTitle: "Mesmo Que Você Não Me Ame",
+        heroBtn: "Ouvir Agora",
+        aboutTitle: "Sobre LIL THALIS",
+        aboutText: "LIL THALIS é um cantor e compositor que transforma sentimentos em arte. Misturando melancolia e esperança, suas músicas refletem a dor, os sonhos e o amor de uma geração que sente demais.",
+        musicTitle: "Músicas",
+        galleryTitle: "Galeria",
+        galleryText: "Em breve, fotos e memórias do processo criativo..."
+      },
+      it: {
+        heroTitle: "Anche Se Non Mi Ami",
+        heroBtn: "Ascolta Ora",
+        aboutTitle: "Su LIL THALIS",
+        aboutText: "LIL THALIS è un cantante e cantautore che trasforma i sentimenti in arte. Mescolando malinconia e speranza, le sue canzoni riflettono il dolore, i sogni e l'amore di una generazione che sente troppo.",
+        musicTitle: "Musica",
+        galleryTitle: "Galleria",
+        galleryText: "Presto, foto e ricordi del processo creativo..."
+      }
+    };
+
+    function changeLanguage(lang) {
+      document.getElementById("hero-title").innerText = translations[lang].heroTitle;
+      document.getElementById("hero-btn").innerText = translations[lang].heroBtn;
+      document.getElementById("about-title").innerText = translations[lang].aboutTitle;
+      document.getElementById("about-text").innerText = translations[lang].aboutText;
+      document.getElementById("music-title").innerText = translations[lang].musicTitle;
+      document.getElementById("gallery-title").innerText = translations[lang].galleryTitle;
+      document.getElementById("gallery-text").innerText = translations[lang].galleryText;
+      localStorage.setItem("lang", lang);
+    }
+
+    // Mantém o idioma escolhido
+    window.onload = () => {
+      const savedLang = localStorage.getItem("lang") || "en";
+      changeLanguage(savedLang);
+    };
+  </script>
 </body>
 </html>
+
