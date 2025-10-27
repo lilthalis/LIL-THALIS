@@ -1,209 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LIL THALIS — Official Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIL THALIS — Even If You Don’t Love Me</title>
   <style>
-    /* ====== STYLE DARK VIBE ====== */
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-    body {
-      background-color: #0e0e10;
-      color: #e0e0e0;
-      font-family: 'Roboto Mono', monospace;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    header {
-      text-align: center;
-      padding: 40px 0;
-      border-bottom: 1px solid #222;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      letter-spacing: 2px;
-      color: #fff;
-      text-shadow: 0 0 15px #ff99cc;
-    }
-
-    nav {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #bbb;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff99cc;
-    }
-
-    section {
-      padding: 50px;
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #ff99cc;
-      margin-bottom: 10px;
-    }
-
-    p {
+    body {
+      background-color: #fff;
+      color: #111;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
     }
 
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      border: 1px solid #ff99cc;
-      color: #ff99cc;
-      border-radius: 5px;
-      transition: 0.3s;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: transparent;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
     }
 
-    .btn:hover {
+    header h1 {
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .icons img {
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('#') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #000;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
       background-color: #ff99cc;
-      color: #0e0e10;
+      border: none;
+      padding: 12px 25px;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 1em;
+    }
+
+    .hero button:hover {
+      background-color: #ff66aa;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    .about, .music, .gallery {
+      text-align: center;
+    }
+
+    .about img, .music img, .gallery img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .bio {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: #ff66aa;
+      font-weight: 500;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      border-top: 1px solid #222;
-      color: #777;
+      padding: 30px;
       font-size: 0.9em;
+      background-color: #f2f2f2;
     }
 
-    /* ====== LANGUAGE SWITCH ====== */
-    .lang-switch {
-      text-align: center;
-      margin-top: 20px;
+    footer a {
+      color: #ff66aa;
+      text-decoration: none;
     }
 
-    .lang-switch button {
-      background: none;
-      border: 1px solid #555;
-      color: #bbb;
-      margin: 0 5px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .lang-switch button:hover {
-      border-color: #ff99cc;
-      color: #ff99cc;
-    }
-
-    /* FADE EFFECT */
-    .fade {
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
   </style>
 </head>
-
 <body>
-  <header class="fade">
+  <header>
     <h1>LIL THALIS</h1>
-    <nav>
-      <a href="#music" data-en="Music" data-pt="Músicas" data-it="Musica">Music</a>
-      <a href="#lyrics" data-en="Lyrics" data-pt="Letras" data-it="Testi">Lyrics</a>
-      <a href="#gallery" data-en="Gallery" data-pt="Galeria" data-it="Galleria">Gallery</a>
-      <a href="#contact" data-en="Contact" data-pt="Contato" data-it="Contatto">Contact</a>
-    </nav>
+    <div class="icons">
+      <img src="https://flagcdn.com/w20/gb.png" alt="English" title="English">
+      <img src="https://flagcdn.com/w20/br.png" alt="Português" title="Português">
+      <img src="https://flagcdn.com/w20/it.png" alt="Italiano" title="Italiano">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Store" title="Store">
+    </div>
   </header>
 
-  <section id="intro" class="fade">
-    <p data-en="Between ache and dream, I found a sound that kept me alive."
-       data-pt="Entre a dor e o sonho, encontrei um som que me manteve vivo."
-       data-it="Tra dolore e sogno, ho trovato un suono che mi ha tenuto in vita.">
-      Between ache and dream, I found a sound that kept me alive.
-    </p>
+  <section class="hero">
+    <h2>Even If You Don’t Love Me</h2>
+    <button>Listen Now</button>
+  </section>
 
-    <div>
-      <a href="#music" class="btn" data-en="Listen now" data-pt="Ouvir agora" data-it="Ascolta ora">Listen now</a>
-      <a href="#lyrics" class="btn" data-en="Read the words" data-pt="Ler as letras" data-it="Leggi i testi">Read the words</a>
+  <section class="about">
+    <h2>About LIL THALIS</h2>
+    <p class="bio">
+      LIL THALIS é um cantor e compositor que transforma sentimentos em arte.
+      Misturando melancolia e esperança, suas músicas refletem a dor, os sonhos e o amor
+      de uma geração que sente demais.
+    </p>
+  </section>
+
+  <section class="music">
+    <h2>Music</h2>
+    <div class="socials">
+      <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g" target="_blank">Spotify</a>
+      <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw" target="_blank">YouTube</a>
+      <a href="https://www.tiktok.com/@lilthalis?_t=ZM-90t7nc7jRN6&_r=1" target="_blank">TikTok</a>
+      <a href="https://www.instagram.com/lilthalis?igsh=cWVsMnBmc2k2c2p5" target="_blank">Instagram</a>
     </div>
   </section>
 
-  <section id="music" class="fade">
-    <h2 data-en="Music" data-pt="Músicas" data-it="Musica">Music</h2>
-    <p data-en="New drops, rough demos and midnight ideas."
-       data-pt="Novos lançamentos, rascunhos e ideias da madrugada."
-       data-it="Nuove uscite, demo grezzi e idee di mezzanotte.">
-       New drops, rough demos and midnight ideas.
-    </p>
-
-    <p><strong>Weird Hair</strong> — Confession under late neon and rain.</p>
-    <p><strong>Bleach Me</strong> — Lowering the noise to hear the heart.</p>
-
-    <div>
-      <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw" class="btn">YouTube</a>
-      <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g" class="btn">Spotify</a>
-      <a href="https://www.tiktok.com/@lilthalis?_t=ZM-90t7nc7jRN6&_r=1" class="btn">TikTok</a>
-      <a href="https://www.instagram.com/lilthalis?igsh=cWVsMnBmc2k2c2p5" class="btn">Instagram</a>
-    </div>
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <p>Em breve, fotos e memórias do processo criativo...</p>
   </section>
-
-  <section id="lyrics" class="fade">
-    <h2 data-en="Lyrics & Poems" data-pt="Letras & Poemas" data-it="Testi e Poesie">Lyrics & Poems</h2>
-    <p data-en="Raw pages from the notebook — bilingual versions."
-       data-pt="Páginas cruas do caderno — versões bilíngues."
-       data-it="Pagine grezze dal quaderno — versioni bilingue.">
-       Raw pages from the notebook — bilingual versions.
-    </p>
-  </section>
-
-  <section id="gallery" class="fade">
-    <h2 data-en="Gallery" data-pt="Galeria" data-it="Galleria">Gallery</h2>
-    <p data-en="Visual fragments of emotion and night."
-       data-pt="Fragmentos visuais da emoção e da noite."
-       data-it="Frammenti visivi di emozione e notte.">
-       Visual fragments of emotion and night.
-    </p>
-  </section>
-
-  <section id="contact" class="fade">
-    <h2 data-en="Socials" data-pt="Redes Sociais" data-it="Social">Socials</h2>
-    <p><a href="#" id="insta" class="btn">Instagram</a>
-       <a href="#" id="yt" class="btn">YouTube</a>
-       <a href="#" id="spfy" class="btn">Spotify</a>
-       <a href="#" id="tktk" class="btn">TikTok</a></p>
-  </section>
-
-  <div class="lang-switch">
-    <button onclick="switchLang('en')">🇬🇧 English</button>
-    <button onclick="switchLang('pt')">🇧🇷 Português</button>
-    <button onclick="switchLang('it')">🇮🇹 Italiano</button>
-  </div>
 
   <footer>
-    <p>© 2025 Lil Thalis — Between ache and dream.</p>
+    <p>© 2025 LIL THALIS — Designed with ❤️ by Irmão</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
   </footer>
-
-  <script>
-    // ====== MULTILANGUAGE SWITCH ======
-    function switchLang(lang) {
-      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
-      });
-    }
-  </script>
 </body>
 </html>
