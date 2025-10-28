@@ -1,1109 +1,216 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIL THALIS | Official Site</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #8A2BE2;
-            --secondary: #9370DB;
-            --accent: #FF00FF;
-            --light-bg: #F8F6FF;
-            --white: #FFFFFF;
-            --text: #333333;
-            --text-light: #666666;
-            --border: #E0E0E0;
-        }
-
-        body {
-            background: var(--light-bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Language Selector */
-        .language-selector {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            background: var(--white);
-            border-radius: 25px;
-            padding: 8px 15px;
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
-            border: 1px solid var(--border);
-        }
-
-        .language-selector select {
-            border: none;
-            background: transparent;
-            color: var(--text);
-            font-size: 14px;
-            outline: none;
-            cursor: pointer;
-        }
-
-        /* Header */
-        header {
-            background: var(--white);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px 50px;
-            position: relative;
-            background: linear-gradient(135deg, var(--white) 0%, var(--light-bg) 100%);
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: var(--text);
-            font-weight: 300;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .listen-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-            cursor: pointer;
-            margin: 5px;
-        }
-
-        .listen-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: 20px;
-            margin-top: -50px;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
-            color: var(--text);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-        }
-
-        .about-image {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
-        }
-
-        .placeholder-img {
-            width: 100%;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-
-        /* YouTube Section */
-        .youtube-section {
-            padding: 100px 20px;
-            background: var(--light-bg);
-        }
-
-        .youtube-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .youtube-channel {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .channel-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .channel-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .channel-info h2 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-
-        .channel-handle {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        .subscribe-btn {
-            background: #FF0000;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .subscribe-btn:hover {
-            background: #CC0000;
-        }
-
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .video-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .video-thumbnail {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            position: relative;
-        }
-
-        .video-thumbnail::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video-thumbnail::before {
-            content: '▶';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-40%, -50%);
-            color: var(--primary);
-            font-size: 1.5rem;
-            z-index: 2;
-        }
-
-        .video-info {
-            padding: 20px;
-        }
-
-        .video-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--text);
-        }
-
-        .video-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .view-all-btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .view-all-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Music Section */
-        .music {
-            padding: 100px 20px;
-            background: var(--white);
-        }
-
-        .music-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .music-card {
-            background: var(--light-bg);
-            border-radius: 15px;
-            padding: 20px;
-            transition: transform 0.3s ease;
-            border: 1px solid var(--border);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .music-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-        }
-
-        .music-cover {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 10px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-
-        .music-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--text);
-        }
-
-        .music-info p {
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-
-        .play-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .play-btn:hover {
-            background: var(--accent);
-        }
-
-        /* Tour Dates */
-        .tour {
-            padding: 100px 20px;
-            background: var(--light-bg);
-        }
-
-        .tour-dates {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .tour-date {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .tour-date h3 {
-            color: var(--text);
-            margin-bottom: 10px;
-        }
-
-        .tour-date p {
-            color: var(--text-light);
-            margin-bottom: 5px;
-        }
-
-        .sold-out {
-            background: #FFE6E6;
-            border-left-color: #FF4444;
-        }
-
-        /* Newsletter */
-        .newsletter {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            text-align: center;
-        }
-
-        .newsletter-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            gap: 10px;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-        }
-
-        .newsletter-btn {
-            padding: 15px 30px;
-            background: var(--text);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .newsletter-btn:hover {
-            background: #222;
-        }
-
-        /* Store */
-        .store {
-            padding: 100px 20px;
-            background: var(--white);
-        }
-
-        .store-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .store-item {
-            background: var(--light-bg);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .store-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 10px 0;
-        }
-
-        .buy-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .buy-btn:hover {
-            background: var(--accent);
-        }
-
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 50px 0;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--white);
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .copyright {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .music-grid, .store-grid, .videos-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .language-selector {
-                top: 10px;
-                right: 10px;
-            }
-
-            .channel-header {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .listen-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-
-            .about, .music, .tour, .store, .youtube-section {
-                padding: 60px 20px;
-            }
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--white);
-                padding: 20px;
-                border-top: 1px solid var(--border);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leotales - Even If You Don’t Love Me</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #ffffff, #f9f2f9, #f7d8f7);
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-family: 'IM Fell English SC', serif;
+      font-size: 3.5em;
+      color: #a46cf5;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .lang-switch button {
+      border: none;
+      background: #a46cf5;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: 0.3s;
+    }
+
+    .lang-switch button:hover {
+      background: #7d4ce3;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #a46cf5;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #7d4ce3;
+    }
+
+    .album {
+      text-align: center;
+      margin: 60px auto;
+      max-width: 500px;
+    }
+
+    .album img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(164, 108, 245, 0.3);
+    }
+
+    .album h2 {
+      margin-top: 20px;
+      color: #7d4ce3;
+      font-size: 1.8em;
+    }
+
+    .album p {
+      color: #555;
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    .listen-btn {
+      background: #a46cf5;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .listen-btn:hover {
+      background: #7d4ce3;
+    }
+
+    section {
+      text-align: center;
+      padding: 50px 20px;
+      border-top: 1px solid #eee;
+    }
+
+    section h3 {
+      font-family: 'IM Fell English SC', serif;
+      color: #a46cf5;
+      font-size: 2em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #faf3fc;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    .socials {
+      margin-top: 15px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #a46cf5;
+      font-weight: 600;
+    }
+
+    .socials a:hover {
+      color: #7d4ce3;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+
+      .album {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Language Selector -->
-    <div class="language-selector">
-        <select id="languageSelect">
-            <option value="en">English</option>
-            <option value="pt">Português</option>
-            <option value="it">Italiano</option>
-        </select>
+
+  <header>
+    <h1>Leotales</h1>
+    <div class="lang-switch">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('pt')">PT</button>
+      <button onclick="setLang('it')">IT</button>
     </div>
+  </header>
 
-    <!-- Header -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">LIL THALIS</div>
-            <nav class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#youtube">Videos</a>
-                <a href="#music">Music</a>
-                <a href="#tour">Tour</a>
-                <a href="#store">Store</a>
-            </nav>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+  <nav>
+    <a href="#album">Album</a>
+    <a href="#lyrics">Lyrics</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#policy">Privacy</a>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content fade-in">
-            <h1>Lil Thalis</h1>
-            <p>Transformando sentimentos em arte através da música</p>
-            <div class="hero-buttons">
-                <a href="#music" class="listen-btn">
-                    <i class="fas fa-play"></i> Ouvir Agora
-                </a>
-                <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw/videos" class="listen-btn btn-secondary" target="_blank">
-                    <i class="fab fa-youtube"></i> Ver Vídeos
-                </a>
-            </div>
-        </div>
-    </section>
+  <div id="album" class="album">
+    <img src="https://via.placeholder.com/500x500?text=Even+If+You+Don%27t+Love+Me+Cover" alt="Album cover">
+    <h2>Even If You Don’t Love Me</h2>
+    <p>The first chapter of Leotales’ story — a melancholic journey through love, pain, and beauty.</p>
+    <a class="listen-btn" href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku" target="_blank">Listen Now</a>
+  </div>
 
-    <!-- YouTube Section -->
-    <section class="youtube-section" id="youtube">
-        <div class="youtube-container">
-            <h2 class="section-title fade-in">YouTube Channel</h2>
-            
-            <div class="youtube-channel fade-in">
-                <div class="channel-header">
-                    <div class="channel-avatar">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <div class="channel-info">
-                        <h2>Lil Thalis</h2>
-                        <p class="channel-handle">@LilThalisOfficial</p>
-                    </div>
-                    <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw?sub_confirmation=1" class="subscribe-btn" target="_blank">
-                        <i class="fab fa-youtube"></i> Inscrever-se
-                    </a>
-                </div>
-                <p>Bem-vindo ao canal oficial do Lil Thalis no YouTube. Aqui você encontra os clipes, performances e conteúdos exclusivos.</p>
-            </div>
+  <section id="lyrics">
+    <h3>Lyrics</h3>
+    <p>“Her red hair reminded me of autumn — beautiful, but gone too soon.” 🍁</p>
+  </section>
 
-            <div class="videos-grid">
-                <div class="video-card fade-in">
-                    <div class="video-thumbnail">
-                        <!-- Thumbnail placeholder -->
-                    </div>
-                    <div class="video-info">
-                        <h3>Even If You Don't Love Me</h3>
-                        <p>Official Music Video</p>
-                        <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw/videos" class="play-btn" target="_blank" style="display: block; text-decoration: none; text-align: center; margin-top: 10px;">
-                            Assistir
-                        </a>
-                    </div>
-                </div>
+  <section id="about">
+    <h3>About</h3>
+    <p>Leotales is a Brazilian artist inspired by emotion, nostalgia, and the sound of dreams. Between love and loss, he finds poetry in the pain.</p>
+  </section>
 
-                <div class="video-card fade-in delay-1">
-                    <div class="video-thumbnail">
-                        <!-- Thumbnail placeholder -->
-                    </div>
-                    <div class="video-info">
-                        <h3>Melancholy Dreams</h3>
-                        <p>Visualizer</p>
-                        <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw/videos" class="play-btn" target="_blank" style="display: block; text-decoration: none; text-align: center; margin-top: 10px;">
-                            Assistir
-                        </a>
-                    </div>
-                </div>
-
-                <div class="video-card fade-in delay-2">
-                    <div class="video-thumbnail">
-                        <!-- Thumbnail placeholder -->
-                    </div>
-                    <div class="video-info">
-                        <h3>Behind The Scenes</h3>
-                        <p>Making of dos vídeos</p>
-                        <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw/videos" class="play-btn" target="_blank" style="display: block; text-decoration: none; text-align: center; margin-top: 10px;">
-                            Assistir
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw/videos" class="view-all-btn" target="_blank">
-                Ver Todos os Vídeos no YouTube
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2 class="section-title fade-in">About Lil Thalis</h2>
-        <div class="about-content">
-            <div class="about-text fade-in delay-1">
-                <p><strong>LIL THALIS</strong> is a singer and songwriter who transforms feelings into art. Mixing melancholy and hope, his songs reflect the pain, dreams, and love of a generation that feels too much.</p>
-                <p>Com uma abordagem única para a composição, LIL THALIS cria músicas que ressoam com audiências globais, explorando temas universais de amor, perda e auto-descoberta.</p>
-                <p>Sua música é uma tapeçaria de emoções, entrelaçando letras profundas com melodias cativantes que permanecem com você muito depois que a música termina.</p>
-            </div>
-            <div class="about-image fade-in delay-2">
-                <div class="placeholder-img">
-                    <i class="fas fa-microphone-alt"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Music Section -->
-    <section class="music" id="music">
-        <h2 class="section-title fade-in">Latest Releases</h2>
-        <div class="music-grid">
-            <div class="music-card fade-in">
-                <div class="music-cover">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="music-info">
-                    <h3>Even If You Don't Love Me</h3>
-                    <p>Single • 2024</p>
-                    <p>O mais recente single que explora as complexidades do amor não correspondido.</p>
-                    <button class="play-btn" onclick="window.open('https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g', '_blank')">Ouvir no Spotify</button>
-                </div>
-            </div>
-
-            <div class="music-card fade-in delay-1">
-                <div class="music-cover">
-                    <i class="fas fa-cloud"></i>
-                </div>
-                <div class="music-info">
-                    <h3>Just in case</h3>
-                    <p>EP • 2024</p>
-                    <p>Uma coleção de músicas que mergulha nas profundezas da emoção humana.</p>
-                    <button class="play-btn" onclick="window.open('https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g', '_blank')">Ouvir no Spotify</button>
-                </div>
-            </div>
-
-            <div class="music-card fade-in delay-2">
-                <div class="music-cover">
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="music-info">
-                    <h3>Weird Hair</h3>
-                    <p>Single • 2023</p>
-                    <p>Um vislumbre de esperança no escuro, celebrando novos começos.</p>
-                    <button class="play-btn" onclick="window.open('https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g', '_blank')">Ouvir no Spotify</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tour Dates -->
-    <section class="tour" id="tour">
-        <h2 class="section-title fade-in">Tour Dates</h2>
-        <div class="tour-dates">
-            <div class="tour-date fade-in">
-                <h3>São Paulo, Brazil</h3>
-                <p><i class="fas fa-calendar"></i> 15 de Junho, 2024</p>
-                <p><i class="fas fa-map-marker-alt"></i> Audio Club</p>
-                <button class="buy-btn">Comprar Ingressos</button>
-            </div>
-
-            <div class="tour-date fade-in delay-1">
-                <h3>Rio de Janeiro, Brazil</h3>
-                <p><i class="fas fa-calendar"></i> 22 de Junho, 2024</p>
-                <p><i class="fas fa-map-marker-alt"></i> Music Hall</p>
-                <button class="buy-btn">Comprar Ingressos</button>
-            </div>
-
-            <div class="tour-date fade-in delay-2">
-                <h3>Lisbon, Portugal</h3>
-                <p><i class="fas fa-calendar"></i> 5 de Julho, 2024</p>
-                <p><i class="fas fa-map-marker-alt"></i> LX Factory</p>
-                <button class="buy-btn">Comprar Ingressos</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Store -->
-    <section class="store" id="store">
-        <h2 class="section-title fade-in">Official Store</h2>
-        <div class="store-grid">
-            <div class="store-item fade-in">
-                <div class="music-cover">
-                    <i class="fas fa-tshirt"></i>
-                </div>
-                <h3>Camiseta Signature</h3>
-                <p>Camiseta premium com design exclusivo</p>
-                <div class="price">R$ 89,90</div>
-                <button class="buy-btn">Comprar</button>
-            </div>
-
-            <div class="store-item fade-in delay-1">
-                <div class="music-cover">
-                    <i class="fas fa-compact-disc"></i>
-                </div>
-                <h3>CD Even If You Don't Love Me</h3>
-                <p>Edição física limitada</p>
-                <div class="price">R$ 29,90</div>
-                <button class="buy-btn">Comprar</button>
-            </div>
-
-            <div class="store-item fade-in delay-2">
-                <div class="music-cover">
-                    <i class="fas fa-hat-cowboy"></i>
-                </div>
-                <h3>Boné Lil Thalis</h3>
-                <p>Boné ajustável premium</p>
-                <div class="price">R$ 69,90</div>
-                <button class="buy-btn">Comprar</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter" id="contact">
-        <h2 class="section-title fade-in" style="color: white;">Stay Connected</h2>
-        <p class="fade-in delay-1" style="margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Receba atualizações exclusivas, novos lançamentos e notícias dos shows.</p>
-        <form class="newsletter-form fade-in delay-2">
-            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
-            <button type="submit" class="newsletter-btn">Inscrever</button>
-        </form>
-    </section>
-
-    <!-- Social Links -->
-    <div class="social-links">
-        <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g" class="social-link" target="_blank">
-            <i class="fab fa-spotify"></i>
-        </a>
-        <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw/videos" class="social-link" target="_blank">
-            <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.tiktok.com/@lilthalis?_t=ZM-90t7nc7jRN6&_r=1" class="social-link" target="_blank">
-            <i class="fab fa-tiktok"></i>
-        </a>
-        <a href="https://www.instagram.com/lilthalis?igsh=cWVsMnBmc2k2c2p5" class="social-link" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
+  <section id="contact">
+    <h3>Connect</h3>
+    <div class="socials">
+      <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku" target="_blank">Spotify</a>
+      <a href="https://www.tiktok.com/@lilthalis" target="_blank">TikTok</a>
+      <a href="https://www.instagram.com/lilthalis" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw" target="_blank">YouTube</a>
+      <a href="https://www.reddit.com" target="_blank">Reddit</a>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#youtube">Videos</a>
-                <a href="#music">Music</a>
-                <a href="#tour">Tour</a>
-                <a href="#store">Store</a>
-                <a href="#contact">Newsletter</a>
-            </div>
-            <div class="copyright">
-                &copy; 2025 LIL THALIS. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
+  <section id="policy">
+    <h3>Privacy & Terms</h3>
+    <p>All rights reserved © Leotales 2025. Your data is protected and never shared.</p>
+  </section>
 
-    <script>
-        // Language Selector
-        document.getElementById('languageSelect').addEventListener('change', function() {
-            const lang = this.value;
-            alert(`Idioma alterado para: ${this.options[this.selectedIndex].text}`);
-        });
+  <footer>
+    <p>© 2025 Leotales | 13•07 | Even If You Don’t Love Me</p>
+  </footer>
 
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    document.querySelector('.nav-links').classList.remove('active');
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(el);
-        });
-
-        // Newsletter form
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('.newsletter-input').value;
-            alert(`Obrigado por se inscrever, ${email}! Você receberá nossas atualizações em breve.`);
-            this.reset();
-        });
-
-        // Buy buttons
-        document.querySelectorAll('.buy-btn').forEach(btn => {
-            if(!btn.disabled) {
-                btn.addEventListener('click', function() {
-                    alert('Redirecionando para a página de compras...');
-                });
-            }
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.nav-container')) {
-                document.querySelector('.nav-links').classList.remove('active');
-            }
-        });
-    </script>
+  <script>
+    function setLang(lang) {
+      alert('Language switched to: ' + lang);
+    }
+  </script>
 </body>
 </html>
