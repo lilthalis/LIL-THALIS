@@ -1,216 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lil thalis - Even If You Don’t Love Me</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lil Thalis</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Poppins:wght@300;400;600&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #ffffff, #f9f2f9, #f7d8f7);
-      color: #222;
-      overflow-x: hidden;
+      padding: 0;
+      font-family: 'UnifrakturCook', cursive;
+      background: linear-gradient(to bottom, #ffffff, #f8f3f8);
+      color: #5c3a7b;
+      text-align: center;
     }
-
     header {
-      text-align: center;
-      padding: 60px 20px 20px;
+      padding: 30px;
     }
-
-    header h1 {
-      font-family: 'IM Fell English SC', serif;
-      font-size: 3.5em;
-      color: #a46cf5;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
+    h1 {
+      font-size: 3.5rem;
+      letter-spacing: 3px;
+      color: #a26cd1;
     }
-
-    .lang-switch {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .lang-switch button {
-      border: none;
-      background: #a46cf5;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.9em;
-      transition: 0.3s;
-    }
-
-    .lang-switch button:hover {
-      background: #7d4ce3;
-    }
-
-    nav {
-      text-align: center;
-      margin-top: 25px;
-    }
-
     nav a {
       margin: 0 10px;
       text-decoration: none;
-      color: #a46cf5;
-      font-weight: 600;
-      transition: 0.3s;
+      color: #a26cd1;
+      font-size: 1.2rem;
     }
-
     nav a:hover {
-      color: #7d4ce3;
+      text-decoration: underline;
     }
-
-    .album {
-      text-align: center;
-      margin: 60px auto;
-      max-width: 500px;
+    .lang-switch {
+      margin-top: 10px;
     }
-
-    .album img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(164, 108, 245, 0.3);
+    .lang-btn {
+      border: none;
+      border-radius: 50px;
+      background: #d4b3f7;
+      color: #fff;
+      margin: 3px;
+      padding: 6px 14px;
+      font-size: 1rem;
+      cursor: pointer;
     }
-
-    .album h2 {
-      margin-top: 20px;
-      color: #7d4ce3;
-      font-size: 1.8em;
+    .lang-btn:hover {
+      background: #c08bf2;
     }
-
-    .album p {
-      color: #555;
-      font-size: 1em;
-      margin-bottom: 20px;
-    }
-
-    .listen-btn {
-      background: #a46cf5;
-      color: white;
-      padding: 10px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .listen-btn:hover {
-      background: #7d4ce3;
-    }
-
     section {
-      text-align: center;
-      padding: 50px 20px;
-      border-top: 1px solid #eee;
+      margin: 40px auto;
+      width: 80%;
+      max-width: 800px;
     }
-
-    section h3 {
-      font-family: 'IM Fell English SC', serif;
-      color: #a46cf5;
-      font-size: 2em;
+    .album img {
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid #c08bf2;
     }
-
+    button.listen {
+      background-color: #c08bf2;
+      border: none;
+      padding: 10px 25px;
+      color: white;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button.listen:hover {
+      background-color: #a26cd1;
+    }
+    .store, .lyrics, .about, .contact, .policy {
+      background: rgba(240, 220, 255, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      margin-top: 40px;
+    }
+    .email-box {
+      margin-top: 40px;
+      background: rgba(240, 220, 255, 0.4);
+      padding: 25px;
+      border-radius: 20px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #c08bf2;
+      width: 70%;
+      max-width: 300px;
+      font-family: inherit;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #c08bf2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    input[type="submit"]:hover {
+      background-color: #a26cd1;
+    }
     footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #faf3fc;
-      color: #777;
-      font-size: 0.9em;
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9rem;
+      background-color: rgba(255, 240, 255, 0.4);
+      border-top: 1px solid #d9b9f4;
     }
-
-    .socials {
-      margin-top: 15px;
+    .crab {
+      position: fixed;
+      width: 40px;
+      opacity: 0.4;
+      z-index: 1;
+      animation: float 8s infinite ease-in-out;
     }
-
-    .socials a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #a46cf5;
-      font-weight: 600;
-    }
-
-    .socials a:hover {
-      color: #7d4ce3;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5em;
-      }
-
-      .album {
-        width: 90%;
-      }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Lil Thalis</h1>
+    <h1>🦀 Lil Thalis 🦀</h1>
     <div class="lang-switch">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('pt')">PT</button>
-      <button onclick="setLang('it')">IT</button>
+      <button class="lang-btn">EN</button>
+      <button class="lang-btn">PT</button>
+      <button class="lang-btn">IT</button>
     </div>
+    <nav>
+      <a href="#album">Album</a>
+      <a href="#lyrics">Lyrics</a>
+      <a href="#store">Store</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#policy">Privacy</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#album">Album</a>
-    <a href="#lyrics">Lyrics</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#policy">Privacy</a>
-  </nav>
-
-  <div id="album" class="album">
-    <img src="https://via.placeholder.com/500x500?text=Even+If+You+Don%27t+Love+Me+Cover" alt="Album cover">
+  <section id="album" class="album">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg" alt="Album cover">
     <h2>Even If You Don’t Love Me</h2>
-    <p>The first chapter of Lil Thalis’ story — a melancholic journey through love, pain, and beauty.</p>
-    <a class="listen-btn" href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku" target="_blank">Listen Now</a>
-  </div>
-
-  <section id="lyrics">
-    <h3>Lyrics</h3>
-    <p>“Her red hair reminded me of autumn — beautiful, but gone too soon.” 🍁</p>
+    <p>The first chapter of Lil Thalis' story — a melancholic journey through love, pain, and beauty.</p>
+    <button class="listen">🎧 Listen Now</button>
   </section>
 
-  <section id="about">
-    <h3>About</h3>
-    <p>Lil Thalis is a Brazilian artist inspired by emotion, nostalgia, and the sound of dreams. Between love and loss, he finds poetry in the pain.</p>
+  <section id="lyrics" class="lyrics">
+    <h2>Lyrics</h2>
+    <p><em>"Your red hair burned like the autumn I never forgot,<br>
+    and I, lost in silence, still wait where your shadow was."</em></p>
   </section>
 
-  <section id="contact">
-    <h3>Connect</h3>
-    <div class="socials">
-      <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku" target="_blank">Spotify</a>
-      <a href="https://www.tiktok.com/@lilthalis" target="_blank">TikTok</a>
-      <a href="https://www.instagram.com/lilthalis" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw" target="_blank">YouTube</a>
-      <a href="https://www.reddit.com" target="_blank">Reddit</a>
-    </div>
+  <section id="store" class="store">
+    <h2>Store</h2>
+    <p>Official Lil Thalis merchandise — hoodies, posters, and dreams. Coming soon.</p>
   </section>
 
-  <section id="policy">
-    <h3>Privacy & Terms</h3>
-    <p>All rights reserved © Lilthalis 2025. Your data is protected and never shared.</p>
+  <section class="email-box">
+    <h3>Stay updated with Lil Thalis 🦀</h3>
+    <form>
+      <input type="email" placeholder="Enter your email..." required>
+      <input type="submit" value="Subscribe">
+    </form>
+    <p style="font-size: 0.9rem; margin-top: 10px;">Receive news, updates, and behind-the-scenes moments.</p>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>This site is managed by Thalis and team — a digital diary for emotions, stories, and art.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Follow on Reddit, Instagram, and YouTube.<br>
+    Collaborations: lilthalis@contact.com</p>
+  </section>
+
+  <section id="policy" class="policy">
+    <h2>Privacy & Terms</h2>
+    <p>We respect your privacy. Any data collected (like emails) will be used only to send updates about Lil Thalis.<br>
+    By subscribing, you agree with our simple goal: spreading art and feelings.</p>
   </section>
 
   <footer>
-    <p>© 2025 Lilthalis | 13•07 | Even If You Don’t Love Me</p>
+    <p>Managed by Lil Thalis & Team 🦀 | All rights reserved © 2025</p>
   </footer>
 
-  <script>
-    function setLang(lang) {
-      alert('Language switched to: ' + lang);
-    }
-  </script>
+  <!-- Floating caranguejos -->
+  <img class="crab" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Emoji_u1f980.svg" style="top:20%; left:10%;">
+  <img class="crab" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Emoji_u1f980.svg" style="top:70%; left:80%;">
+  <img class="crab" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Emoji_u1f980.svg" style="top:40%; left:50%;">
 </body>
 </html>
