@@ -1,172 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lil Thalis — Even If You Don’t Love Me</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #fff, #f7f0ff);
-      color: #333;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    h1 {
-      font-family: 'Cinzel Decorative', cursive;
-      text-align: center;
-      font-size: 3rem;
-      color: #a176db;
-      margin-top: 40px;
-    }
-
-    nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    nav a {
-      margin: 0 10px;
-      color: #8c59c3;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .album-section {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .album-section img {
-      width: 220px;
-      border-radius: 10px;
-      margin-top: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .album-section h2 {
-      color: #7b3fb3;
-    }
-
-    .fanart {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .fanart img {
-      width: 280px;
-      border-radius: 10px;
-      margin: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .newsletter {
-      background-color: #f0e4ff;
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 12px;
-      margin: 40px auto;
-      width: 80%;
-      max-width: 500px;
-    }
-
-    .newsletter input[type="email"] {
-      padding: 10px;
-      width: 70%;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-      margin-right: 10px;
-    }
-
-    .newsletter button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #a176db;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .newsletter button:hover {
-      background-color: #8c59c3;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-      background-color: #f7f0ff;
-      color: #6c4ba3;
-    }
-
-    .crab {
-      position: absolute;
-      width: 30px;
-      opacity: 0.1;
-      animation: moveCrab 30s linear infinite;
-    }
-
-    @keyframes moveCrab {
-      0% {transform: translateX(0);}
-      100% {transform: translateX(100vw);}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <h1 class="logo">Lil Thalis</h1>
+    <nav>
+      <a href="#album">Album</a>
+      <a href="#fanart">Fan Art</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
 
-  <h1>Lil Thalis</h1>
-
-  <nav>
-    <a href="#album">Album</a>
-    <a href="#fanart">Fan Art</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#privacy">Privacy</a>
-  </nav>
-
-  <section id="album" class="album-section">
+  <section id="album" class="hero">
     <h2>Even If You Don’t Love Me</h2>
-    <p>The first part of the story — a melancholic journey through love, pain and rebirth.</p>
-    <img src="https://photos.app.goo.gl/zPnHiMr4EwUikn7E9" alt="Album cover">
+    <p>The first part of the story — a melancholic journey through love, pain, and rebirth.</p>
+    <img src="" alt="Album cover">
   </section>
 
-  <section id="fanart" class="fanart">
+  <section id="fanart" class="alt-bg">
     <h2>Fan Art & Poem</h2>
     <p>A story told in verses — the pain, the loss, and the beauty of it.</p>
-    <img src="https://photos.app.goo.gl/zPnHiMr4EwUikn7E9" alt="Poem image">
+    <img src="images/poem.jpg" alt="Poem image" class="rounded">
+    <div class="fanarts">
+      <img src="images/fanart1.jpg" alt="Fan art 1">
+      <img src="images/fanart2.jpg" alt="Fan art 2">
+    </div>
   </section>
 
-  <section class="newsletter">
-    <h3>Join the Lil Thalis Circle</h3>
-    <p>Get updates, drops, and poems directly in your inbox.</p>
-    <form action="https://formspree.io/f/xpwaeylr" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
+  <section id="about">
+    <h2>About Lil Thalis</h2>
+    <p>Lil Thalis é um artista independente que transforma sentimentos em música e arte.  
+    Suas letras falam de amor, dor e recomeço — cada som é um pedaço da alma. Este site é um pequeno pedaço de mim, feito com amor e carinho para cada um que me apoiam ❤️.</p>
+  </section>
+
+  <section id="contact" class="alt-bg">
+    <h2>Join the Lil Thalis Circle</h2>
+    <p>Quer receber novidades, lançamentos e poemas inéditos?</p>
+    <form action="mailto:gabrielthalison188@gmail.com" method="post" enctype="text/plain">
+      <input type="email" name="email" placeholder="Digite seu e-mail" required>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Lil Thalis — “Even If You Don’t Love Me”</p>
-    <p>Follow me:
-      <a href="https://twitter.com/lilthalis" target="_blank">Twitter</a> •
-      <a href="https://instagram.com/lilthalis" target="_blank">Instagram</a> •
-      <a href="https://youtube.com/@lilthalis" target="_blank">YouTube</a> •
-      <a href="https://open.spotify.com/artist/lilthalis" target="_blank">Spotify</a>
-    </p>
-    <p><a href="#privacy">Terms & Privacy</a></p>
+    <p>© 2025 Lil Thalis. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://instagram.com/lilthalis" target="_blank">Instagram</a>
+      <a href="https://open.spotify.com" target="_blank">Spotify</a>
+      <a href="https://github.com/lilthalis" target="_blank">GitHub</a>
+      <a href="https://reddit.com/user/lilthalis" target="_blank">Reddit</a>
+    </div>
   </footer>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Crab_icon.svg" class="crab" style="top:20%; left:5%;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Crab_icon.svg" class="crab" style="top:60%; left:10%;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Crab_icon.svg" class="crab" style="top:80%; left:40%;">
-
 </body>
 </html>
