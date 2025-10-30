@@ -1,455 +1,280 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Lil Thalis — Even If You Don't Love Me</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lil Thalis — Even If You Don't Love Me</title>
+  <style>
+    :root{
+      --accent:#b77cf0; /* lilac */
+      --muted:#f5eef9;
+      --text:#222;
+      --soft:#f3f0f6;
+      --maxw:1100px;
+      --radius:14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--text);background:linear-gradient(0deg, #fff 0%, #fff 60%);}
+    header{padding:48px 20px 10px;text-align:center}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 
-<!-- Google font (apenas exemplo) -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    .logo{font-family: 'Cormorant Garamond', 'Times New Roman', serif;font-weight:700;letter-spacing:2px;color:var(--accent);font-size:48px}
+    .lang-controls{margin:10px 0;}
+    .lang-controls button{background:var(--accent);border:none;color:white;padding:8px 12px;border-radius:20px;margin:0 6px;cursor:pointer;font-weight:700}
 
-<style>
-  :root{
-    --bg:#ffffff;
-    --accent:#b77df0; /* lilás */
-    --muted:#f6f2f9;
-    --text:#222;
-    --gray:#9b9b9b;
-    --maxw:1100px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family: "Inter",system-ui,Roboto,Arial,sans-serif;
-    color:var(--text);
-    background:var(--bg);
-    -webkit-font-smoothing:antialiased;
-  }
+    nav{display:flex;justify-content:center;gap:24px;margin:18px 0 36px}
+    nav a{color:var(--accent);text-decoration:none;font-weight:700}
 
-  header{
-    max-width:var(--maxw);
-    margin:28px auto;
-    padding:0 20px;
-    text-align:center;
-  }
-  .brand{
-    font-family: "Playfair Display", serif;
-    color:var(--accent);
-    font-size:48px;
-    letter-spacing:2px;
-    margin:0;
-  }
-  .lang-switch{margin-top:8px}
-  .lang-switch button{
-    background:rgba(183,125,240,0.12);
-    border:none;
-    padding:8px 12px;
-    margin:0 6px;
-    border-radius:20px;
-    color:var(--accent);
-    cursor:pointer;
-    font-weight:600;
-  }
+    .hero{padding:40px 0 60px;text-align:center;background:linear-gradient(180deg, rgba(183,124,240,0.04), rgba(255,255,255,0));}
+    .album-title{font-size:36px;color:var(--accent);font-weight:800;margin:6px 0}
+    .album-sub{max-width:820px;margin:10px auto 22px;color:#444;font-size:18px}
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:14px 26px;border-radius:30px;text-decoration:none;font-weight:700}
 
-  nav{
-    margin-top:18px;
-    display:flex;
-    gap:18px;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-  nav a{
-    color:var(--accent);
-    text-decoration:none;
-    font-weight:600;
-  }
+    section{padding:60px 0}
+    h2{font-family: 'Cormorant Garamond', serif;color:var(--accent);text-align:center;font-size:36px;margin:10px 0}
 
-  /* Hero / album */
-  .hero{
-    background:linear-gradient(180deg, #fff 0%, #fbf5fb 100%);
-    padding:60px 20px 90px;
-    text-align:center;
-  }
-  .hero h1{
-    color:var(--accent);
-    font-family:"Playfair Display",serif;
-    font-size:36px;
-    margin:8px 0 14px;
-  }
-  .hero p.lead{
-    max-width:760px;
-    margin:0 auto 22px;
-    color:#444;
-  }
-  .btn{
-    display:inline-block;
-    background:var(--accent);
-    color:#fff;
-    padding:12px 26px;
-    border-radius:28px;
-    text-decoration:none;
-    font-weight:700;
-    box-shadow:0 6px 18px rgba(183,125,240,0.18);
-  }
+    /* story */
+    .story{background:linear-gradient(180deg,#fff,var(--muted));padding:40px;border-radius:12px;margin:24px auto;max-width:980px}
+    .story p{line-height:1.6;font-size:18px;color:#333}
 
-  /* Sections */
-  section{
-    max-width:var(--maxw);
-    margin:40px auto;
-    padding:0 20px 40px;
-  }
-  section h2{
-    text-align:center;
-    color:var(--accent);
-    font-family:"Playfair Display", serif;
-    font-size:28px;
-    margin-bottom:16px;
-  }
-  .album-cover{
-    text-align:center;
-    margin:18px 0 34px;
-  }
-  .album-cover img{max-width:320px;width:70%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.07)}
+    /* big lyric card */
+    .lyric-card{background:linear-gradient(180deg,#fff,#f9f6fb);padding:28px;border-radius:12px;margin:28px auto;max-width:820px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
+    .lyric-card pre{white-space:pre-wrap;font-family:inherit;font-size:18px;line-height:1.6;margin:0}
 
-  /* Fan art grid */
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-    align-items:start;
-  }
-  .card{
-    background:#fff;
-    border-radius:8px;
-    padding:14px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.04);
-  }
-  .card img{width:100%;border-radius:6px;display:block}
+    /* fanart grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+    .card{background:#fff;border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.05)}
+    .card img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+    .card h3{font-size:18px;margin:12px 0 6px}
+    .card p{color:#666;margin:0}
 
-  /* Lyrics / poem big block */
-  .poem{
-    background:linear-gradient(180deg, #fff 0%, #f9f3fb 100%);
-    border-radius:12px;
-    padding:26px;
-    margin:12px auto;
-    max-width:900px;
-    box-shadow:0 4px 18px rgba(0,0,0,0.03);
-  }
-  .poem pre{
-    white-space:pre-wrap;
-    font-family:inherit;
-    line-height:1.6;
-    margin:0;
-  }
+    /* newsletter */
+    .newsletter{background:var(--muted);padding:36px;border-radius:12px;text-align:center;margin:30px auto;max-width:820px}
+    .newsletter input{padding:12px 14px;border-radius:8px;border:2px solid rgba(183,124,240,0.5);width:60%;max-width:420px;font-size:16px}
+    .newsletter button{padding:12px 16px;border-radius:8px;border:none;background:var(--accent);color:#fff;margin-left:12px;cursor:pointer}
 
-  /* Subscribe / contact */
-  .subscribe{
-    background:#f0e7f8;
-    padding:24px;
-    border-radius:12px;
-    text-align:center;
-    margin:30px auto;
-    max-width:760px;
-  }
-  .subscribe input[type="email"]{
-    padding:12px 14px;
-    border-radius:8px;
-    border:1px solid rgba(0,0,0,0.08);
-    width:65%;
-    max-width:420px;
-    margin-right:8px;
-  }
-  .subscribe button{padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;border:0;cursor:pointer}
+    /* footer */
+    footer{padding:28px 0;background:linear-gradient(0deg,#f5eef9,transparent);margin-top:40px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .socials a{margin:0 8px;color:var(--accent);text-decoration:none;font-weight:700}
 
-  /* footer */
-  footer{
-    border-top:1px solid #eee;
-    padding:18px 20px 50px;
-    margin-top:30px;
-    text-align:center;
-    color:#666;
-  }
-  .socials a{display:inline-block;margin:0 6px}
-  .small{font-size:13px;color:#7a7a7a}
+    /* terms modal */
+    .modal{position:fixed;left:0;top:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);padding:24px}
+    .modal .box{background:#fff;border-radius:12px;padding:24px;max-width:880px;max-height:80vh;overflow:auto}
+    .close-btn{background:#eee;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
 
-  /* Modal (Privacy/Terms) */
-  .modal{
-    position:fixed;
-    inset:0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    background:rgba(0,0,0,0.45);
-    z-index:60;
-  }
-  .modal .box{
-    background:#fff;
-    padding:20px;
-    border-radius:10px;
-    max-width:760px;
-    width:92%;
-    max-height:80vh;
-    overflow:auto;
-  }
-  .close-modal{float:right;background:#eee;padding:6px 10px;border-radius:8px;border:0;cursor:pointer}
-
-  @media (max-width:640px){
-    .brand{font-size:34px}
-    .hero h1{font-size:28px}
-    .subscribe input[type="email"]{width:100%;margin:8px 0 0}
-    .subscribe button{width:100%}
-  }
-
-</style>
+    @media(max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .logo{font-size:36px}
+      .album-title{font-size:28px}
+    }
+    @media(max-width:520px){
+      .grid{grid-template-columns:1fr}
+      .newsletter input{width:100%;max-width:unset;display:block;margin:10px auto}
+      .newsletter button{display:block;margin:10px auto}
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <div class="logo">LIL THALIS</div>
+      <div class="lang-controls">
+        <button data-lang="en">EN</button>
+        <button data-lang="pt">PT</button>
+        <button data-lang="it">IT</button>
+      </div>
+      <nav>
+        <a href="#album">Album</a>
+        <a href="#lyrics">Lyrics</a>
+        <a href="#fanart">Fan Art</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy" id="open-privacy">Privacy</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <div class="brand" id="brand">Lil Thalis</div>
+  <main>
+    <section id="album" class="hero">
+      <div class="container">
+        <div class="album-title" data-text-key="album_title">Even If You Don’t Love Me</div>
+        <div class="album-sub" data-text-key="album_sub">The first chapter of Lil Thalis’ story — a melancholic journey through love, pain, and beauty.</div>
+        <a class="cta" href="#lyrics" data-text-key="listen">Listen Now</a>
+      </div>
+    </section>
 
-  <div class="lang-switch" aria-hidden="false">
-    <button data-lang="en">EN</button>
-    <button data-lang="pt" class="active">PT</button>
-    <button data-lang="it">IT</button>
-  </div>
+    <section class="container">
+      <h2 data-text-key="story_head">The Story Behind the Album</h2>
+      <div class="story" id="story-box">
+        <!-- story text injected by JS for language support -->
+        <p id="story-text"></p>
+      </div>
+    </section>
 
-  <nav>
-    <a href="#album" data-i18n="nav_album">Album</a>
-    <a href="#lyrics" data-i18n="nav_lyrics">Lyrics</a>
-    <a href="#fan" data-i18n="nav_fan">Fan Art</a>
-    <a href="#contact" data-i18n="nav_contact">Contact</a>
-    <a href="#" id="open-privacy" data-i18n="nav_privacy">Privacy</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <h1 data-i18n="hero_title">Even If You Don’t Love Me</h1>
-  <p class="lead" data-i18n="hero_lead">
-    The first chapter of Lil Thalis’ story — a melancholic journey through love, pain and beauty.
-  </p>
-  <a class="btn" href="#album" data-i18n="hero_btn">Listen Now</a>
-</section>
-
-<!-- ALBUM -->
-<section id="album">
-  <h2 data-i18n="sec_album">Album</h2>
-
-  <div class="album-cover">
-    <img id="albumImg" src="images/album.jpg" alt="Album cover">
-  </div>
-
-  <div style="text-align:center; max-width:900px; margin:0 auto; color:#444;">
-    <p data-i18n="album_text">
-      Even If You Don't Love Me — chapter one: songs about nights, neon, scars and small hopes. Tracks, demos and midnight ideas.
-    </p>
-  </div>
-</section>
-
-<!-- LYRICS / POEM -->
-<section id="lyrics">
-  <h2 data-i18n="sec_lyrics">Lyrics & Poem</h2>
-
-  <div class="poem" id="poemBlock">
-    <pre id="poemText">
-
+    <section id="lyrics" class="container">
+      <h2 data-text-key="lyrics_head">Letras & Poema</h2>
+      <div class="lyric-card">
+        <pre id="poem">Bleacho meus pensamentos pra dormir melhor
 Mas a mente fala quando apago o sol
 Cê disse "I'll stay" — mas isso é só
-Mais um name que o neon levou
-    </pre>
-  </div>
-</section>
+Mais um name que o neon levou</pre>
+      </div>
+    </section>
 
-<!-- FAN ART -->
-<section id="fan">
-  <h2 data-i18n="sec_fan">Fan Art & Poem</h2>
+    <section id="fanart" class="container">
+      <h2 data-text-key="fanart_head">Fan Art & Poem</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://photos.app.goo.gl/zPnHiMr4EwUikn7E9" alt="Poem image" onerror="this.src='https://via.placeholder.com/600x400?text=Poem+image'">
+          <h3>Poem image</h3>
+          <p>A visual chapter for the poem — a lonely night, neon and rain.</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/800x600?text=Fan+art+1" alt="Fan art 1">
+          <h3>Fan art 1</h3>
+          <p>Sketches and tributes from the circle.</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/800x600?text=Fan+art+2" alt="Fan art 2">
+          <h3>Fan art 2</h3>
+          <p>Collages and polaroid memories.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="grid">
-    <div class="card"><img src="" alt="Fan art 1"><h3>Fan art 1</h3><p class="small">A story told in verses — the pain, the loss, and the beauty of it.</p></div>
-    <div class="card"><img src="" alt="Fan art 2"><h3>Fan art 2</h3><p class="small">Lines and drawings from the night.</p></div>
-    <div class="card"><img src="" alt="Fan art 3"><h3>Fan art 3</h3><p class="small">A poem in color.</p></div>
-  </div>
-</section>
+    <section id="about" class="container">
+      <h2 data-text-key="about_head">About Lil Thalis</h2>
+      <p style="text-align:center;max-width:900px;margin:14px auto;color:#444;line-height:1.6" data-text-key="about_text">Lil Thalis is an independent artist who turns feeling into music and art. His lyrics speak of love, pain and rebirth — each song is a piece of the soul. This site is a small piece of that world, built for the circle of listeners who care.</p>
+    </section>
 
-<!-- CONTACT / SUBSCRIBE -->
-<section id="contact">
-  <h2 data-i18n="sec_contact">Contact / Join the Lil Thalis Circle</h2>
+    <section id="contact" class="container">
+      <h2 data-text-key="join_head">Join the Lil Thalis Circle</h2>
+      <div class="newsletter">
+        <p>Want to receive updates, releases and unreleased poems?</p>
+        <div>
+          <input id="emailInput" placeholder="Digite seu e-mail" type="email">
+          <button id="subscribeBtn">Enviar</button>
+        </div>
+        <small style="display:block;margin-top:10px;color:#666">You can also e-mail: <a href="mailto:gabrielthalison188@gmail.com">gabrielthalison188@gmail.com</a></small>
+      </div>
+    </section>
 
-  <div class="subscribe" role="form" aria-label="newsletter">
-    <p data-i18n="subscribe_text">Leave your e-mail and get news: releases, shows and poems.</p>
+  </main>
 
-    <form id="subscribeForm" onsubmit="return handleSubscribe(event)">
-      <input id="emailInput" type="email" placeholder="your@email.com" required>
-      <button type="submit" id="subBtn">Subscribe</button>
-    </form>
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2025 Lil Thalis — Designed with ♥ by Irmão</div>
+      <div class="socials">
+        <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g" target="_blank">Spotify</a>
+        <a href="https://www.tiktok.com/@lilthalis?_t=ZM-90t7nc7jRN6&_r=1" target="_blank">TikTok</a>
+        <a href="https://www.instagram.com/lilthalis?igsh=cWVsMnBmc2k2c2p5" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </footer>
 
-    <p id="subMsg" style="margin-top:10px;color:green;display:none">Obrigado! Abra seu e-mail para confirmar (ou o app de e-mail será aberto).</p>
-
-    <div style="margin-top:18px">
-      <p class="small">Direct contact: <a href="mailto:gabrielthalison188@gmail.com">gabrielthalison188@gmail.com</a></p>
+  <!-- Privacy / Terms modal (we use modals so they don't open new pages) -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="box">
+      <button class="close-btn" id="closeModal">Close</button>
+      <div id="modalContent" style="margin-top:16px;line-height:1.6;color:#333"></div>
     </div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="socials" style="margin-bottom:8px">
-    <a href="https://www.instagram.com/lilthalis?igsh=cWVsMnBmc2k2c2p5" target="_blank" rel="noopener noreferrer">Instagram</a> |
-    <a href="https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g" target="_blank">Spotify</a> |
-    <a href="https://www.tiktok.com/@lilthalis?_t=ZM-90t7nc7jRN6&_r=1" target="_blank">TikTok</a> |
-    <a href="https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw" target="_blank">YouTube</a>
-  </div>
+  <script>
+    // language texts (EN / PT / IT)
+    const texts = {
+      en:{
+        story: `\n"Even If You Don’t Love Me" is not only a record — it is a piece of the soul.\n\nThis album was born of long nights, when thoughts broke and small flashes of hope remained. Each track is a memory, a conversation that never happened, an "I love you" trapped between the lines.\n\nThis is the first chapter of a story about unreturned love, self-discovery and rebirth. Part I explores the loss and emptiness; Part II (coming soon) will carry the rebuilding and the light that follows.\n\nEven if she doesn't love you — the music stays. — Lil Thalis, 2025` ,
+        album_title:'Even If You Don\'t Love Me',
+        album_sub:'The first chapter of Lil Thalis\' story — a melancholic journey through love, pain, and beauty.',
+        listen:'Listen Now',
+        story_head:'The Story Behind the Album',
+        lyrics_head:'Lyrics & Poem',
+        fanart_head:'Fan Art & Poem',
+        about_head:'About Lil Thalis',
+        about_text:'Lil Thalis is an independent artist who turns feeling into music and art. His lyrics speak of love, pain and rebirth — each song is a piece of the soul. This site is a small piece of that world, built for the circle of listeners who care.',
+        join_head:'Join the Lil Thalis Circle'
+      },
+      pt:{
+        story:`\n"Even If You Don’t Love Me" não é só um disco — é um pedaço de alma.\n\nEste álbum nasceu de noites longas, quando os pensamentos se quebravam e pequenas fagulhas de esperança permaneciam. Cada faixa é uma memória, uma conversa que nunca aconteceu, um "eu te amo" preso entre as linhas.\n\nEsta é a primeira parte de uma história sobre amor não correspondido, autodescoberta e renascimento. A Parte I explora a perda e o vazio; a Parte II (em breve) trará a reconstrução e a luz que vem depois.\n\nMesmo que ela não te ame — a música permanece. — Lil Thalis, 2025`,
+        album_title:'Even If You Don\'t Love Me',
+        album_sub:'O primeiro capítulo da história de Lil Thalis — uma jornada melancólica pelo amor, dor e beleza.',
+        listen:'Ouvir agora',
+        story_head:'A História por Trás do Álbum',
+        lyrics_head:'Letras & Poema',
+        fanart_head:'Fan Art & Poema',
+        about_head:'Sobre Lil Thalis',
+        about_text:'Lil Thalis é um artista independente que transforma sentimentos em música e arte. Suas letras falam de amor, dor e recomeço — cada canção é um pedaço da alma. Este site é um pequeno pedaço desse mundo, criado para o círculo de ouvintes que se importam.',
+        join_head:'Junte-se ao Círculo Lil Thalis'
+      },
+      it:{
+        story:`\n"Even If You Don’t Love Me" non è solo un disco — è un pezzo d'anima.\n\nQuesto album è nato da notti lunghe, quando i pensieri si rompevano e rimanevano piccoli lampi di speranza. Ogni traccia è un ricordo, una conversazione che non è mai avvenuta, un "ti amo" intrappolato tra le righe.\n\nQuesta è la prima parte di una storia su amore non corrisposto, scoperta di sé e rinascita. La Parte I esplora la perdita e il vuoto; la Parte II (in arrivo) porterà la ricostruzione e la luce che segue.\n\nAnche se lei non ti ama — la musica resta. — Lil Thalis, 2025`,
+        album_title:'Even If You Don\'t Love Me',
+        album_sub:'Il primo capitolo della storia di Lil Thalis — un viaggio malinconico attraverso amore, dolore e bellezza.',
+        listen:'Ascolta ora',
+        story_head:'La Storia Dietro l\'Album',
+        lyrics_head:'Testi & Poema',
+        fanart_head:'Fan Art & Poema',
+        about_head:'About Lil Thalis',
+        about_text:'Lil Thalis è un artista indipendente che trasforma i sentimenti in musica e arte. I suoi testi parlano d\'amore, dolore e rinascita — ogni canzone è un pezzo d\'anima. Questo sito è una piccola parte di quel mondo, creato per la cerchia di ascoltatori che ci tengono.',
+        join_head:'Unisciti al Cerchio di Lil Thalis'
+      }
+    }
 
-  <div>
-    <small class="small">© 2025 LIL THALIS — Designed with ♥ by Lil Thalis</small>
-    <div style="margin-top:6px">
-      <a href="#" id="open-terms" style="color:var(--accent);text-decoration:none;margin-left:8px">Terms</a> |
-      <a href="#" id="open-privacy2" style="color:var(--accent);text-decoration:none;margin-left:8px">Privacy</a>
-    </div>
-  </div>
-</footer>
+    // initialize language
+    let currentLang = 'en';
+    function applyLang(lang){
+      currentLang = lang;
+      const d = texts[lang];
+      // replace text nodes
+      document.querySelectorAll('[data-text-key]').forEach(el=>{
+        const k = el.getAttribute('data-text-key');
+        if(d[k]) el.textContent = d[k];
+      });
+      document.getElementById('story-text').textContent = d.story;
+    }
 
-<!-- MODALS -->
-<div id="modal" class="modal" aria-hidden="true">
-  <div class="box" role="dialog" aria-modal="true" aria-label="modal-content">
-    <button class="close-modal" id="closeModal">Close</button>
-    <div id="modalContent">
-      <!-- preenchido por JS -->
-    </div>
-  </div>
-</div>
+    // wire buttons
+    document.querySelectorAll('.lang-controls button').forEach(b=>{
+      b.addEventListener('click',()=>applyLang(b.dataset.lang));
+    });
 
-<script>
-/* -------------------------
-  CONFIG: social links (já setadas)
-   substitua aqui se quiser trocar
-   ------------------------- */
-const SOCIALS = {
-  instagram: "https://www.instagram.com/lilthalis?igsh=cWVsMnBmc2k2c2p5",
-  spotify: "https://open.spotify.com/user/31x7hr4uvgdfmf3qclz7nbzos2ku?si=CBsMggSBRJqZXHd-GBV84g",
-  tiktok: "https://www.tiktok.com/@lilthalis?_t=ZM-90t7nc7jRN6&_r=1",
-  youtube: "https://www.youtube.com/channel/UCCQn9ODvML8JI42NkmC6DKw"
-};
+    // default
+    applyLang('en');
 
-/* Simple language dictionary */
-const DICT = {
-  en: {
-    nav_album:"Album",
-    nav_lyrics:"Lyrics",
-    nav_fan:"Fan Art",
-    nav_contact:"Contact",
-    nav_privacy:"Privacy",
-    hero_title:"Even If You Don’t Love Me",
-    hero_lead:"The first chapter of Lil Thalis’ story — a melancholic journey through love, pain and beauty.",
-    hero_btn:"Listen Now",
-    sec_album:"Album",
-    album_text:"Even If You Don't Love Me — songs about nights, neon, scars and small hopes.",
-    sec_lyrics:"Lyrics & Poem",
-    sec_fan:"Fan Art & Poem",
-    sec_contact:"Contact / Join the Lil Thalis Circle",
-    subscribe_text:"Leave your e-mail and get news: releases, shows and poems."
-  },
-  pt: {
-    nav_album:"Álbum",
-    nav_lyrics:"Letras",
-    nav_fan:"Fan Art",
-    nav_contact:"Contato",
-    nav_privacy:"Privacidade",
-    hero_title:"Even If You Don’t Love Me",
-    hero_lead:"O primeiro capítulo da história de Lil Thalis — uma jornada melancólica por amor, dor e beleza.",
-    hero_btn:"Ouvir agora",
-    sec_album:"Álbum",
-    album_text:"Even If You Don't Love Me — canções sobre noites, neon, cicatrizes e pequenas esperanças.",
-    sec_lyrics:"Letras & Poema",
-    sec_fan:"Fan Art & Poema",
-    sec_contact:"Contato / Junte-se ao Lil Thalis Circle",
-    subscribe_text:"Deixe seu e-mail para receber novidades: lançamentos, shows e poemas."
-  },
-  it: {
-    nav_album:"Album",
-    nav_lyrics:"Testi",
-    nav_fan:"Fan Art",
-    nav_contact:"Contatti",
-    nav_privacy:"Privacy",
-    hero_title:"Even If You Don’t Love Me",
-    hero_lead:"Il primo capitolo della storia di Lil Thalis — un viaggio malinconico tra amore, dolore e bellezza.",
-    hero_btn:"Ascolta ora",
-    sec_album:"Album",
-    album_text:"Even If You Don't Love Me — canzoni sulle notti, il neon, le cicatrici e le piccole speranze.",
-    sec_lyrics:"Testi & Poesia",
-    sec_fan:"Fan Art & Poesia",
-    sec_contact:"Contatti / Entra nel Lil Thalis Circle",
-    subscribe_text:"Lascia la tua email per ricevere novità: uscite, show e poesie."
-  }
-};
+    // newsletter: for now open mailto (simple)
+    document.getElementById('subscribeBtn').addEventListener('click',()=>{
+      const email = document.getElementById('emailInput').value.trim();
+      if(!email){ alert('Digite um e-mail válido. / Enter a valid email.'); return }
+      // open mailto to collect (you can connect to a server or Google Forms later)
+      window.location.href = `mailto:gabrielthalison188@gmail.com?subject=Subscribe%20to%20Lil%20Thalis%20Circle&body=Subscribe:%20${encodeURIComponent(email)}`;
+    });
 
-/* language switching */
-document.querySelectorAll('.lang-switch button').forEach(btn=>{
-  btn.addEventListener('click', e=>{
-    const lang = btn.dataset.lang;
-    switchLang(lang);
-  });
-});
+    // privacy modal
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    document.getElementById('open-privacy').addEventListener('click', (e)=>{
+      e.preventDefault();
+      modalContent.innerHTML = `<h3>Privacy & Terms</h3><p>This site collects no tracking data. If you want to subscribe we open your e-mail client — no third-party tracking is used on this demo site. Terms: content belongs to Lil Thalis. Use of site implies acceptance of basic site rules. For commercial requests please contact via e-mail.</p>`;
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+    });
+    document.getElementById('closeModal').addEventListener('click', ()=>{ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); });
+    modal.addEventListener('click',(e)=>{ if(e.target===modal) { modal.style.display='none'; modal.setAttribute('aria-hidden','true'); } });
 
-function switchLang(lang){
-  const dict = DICT[lang] || DICT.pt;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key = el.getAttribute('data-i18n');
-    if(dict[key]) el.textContent = dict[key];
-  });
-  // update active style
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.style.opacity= (b.dataset.lang===lang?1:0.6));
-}
-
-/* default language */
-switchLang('pt');
-
-/* Modal Privacy / Terms */
-const modal = document.getElementById('modal');
-const modalContent = document.getElementById('modalContent');
-document.getElementById('open-privacy').addEventListener('click', (e)=>{
-  e.preventDefault();
-  openModal('privacy');
-});
-document.getElementById('open-privacy2').addEventListener('click', (e)=>{
-  e.preventDefault();
-  openModal('privacy');
-});
-document.getElementById('open-terms').addEventListener('click', (e)=>{
-  e.preventDefault();
-  openModal('terms');
-});
-document.getElementById('closeModal').addEventListener('click', ()=>{ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); });
-
-function openModal(which){
-  if(which==='privacy'){
-    modalContent.innerHTML = `<h3>Privacy Policy</h3>
-      <p>We respect your privacy. This demo site stores no data on the server. If you subscribe, your email will be opened in your mail app (mailto) — to set up a real newsletter integration, replace the mailto with a service (Formspree, Netlify Forms, etc.)</p>`;
-  } else {
-    modalContent.innerHTML = `<h3>Terms & Conditions</h3>
-      <p>Content on this site is demonstrative. When you publish, make sure you own or have rights for images and songs. Use this area to explain terms for purchases, downloads, or fan contributions.</p>`;
-  }
-  modal.style.display='flex';
-  modal.setAttribute('aria-hidden','false');
-}
-
-/* Subscribe: open mail client with email prefilled and show confirmation message */
-function handleSubscribe(e){
-  e.preventDefault();
-  const email = document.getElementById('emailInput').value.trim();
-  if(!email) return false;
-  // open mail client to contact owner (you can change subject/body)
-  const mailto = `mailto:gabrielthalison188@gmail.com?subject=Subscribe%20Lil%20Thalis&body=Please%20subscribe%20this%20email:%20${encodeURIComponent(email)}`;
-  window.location.href = mailto;
-  document.getElementById('subMsg').style.display='block';
-  return false;
-}
-
-/* Optional: fallback for missing images -> show placeholder */
-document.querySelectorAll('img').forEach(img=>{
-  img.onerror = ()=>{ img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="400" height="220"><rect width="100%" height="100%" fill="#f5eefb"/><text x="50%" y="50%" font-family="Arial" font-size="18" fill="#b0a1d6" dominant-baseline="middle" text-anchor="middle">Image missing — add to /images/</text></svg>`); }
-});
-
-</script>
+    // ensure anchor scrolling from header
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click', (ev)=>{
+        const href = a.getAttribute('href');
+        if(href && href.startsWith('#')){
+          ev.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth'});
+        }
+      })
+    })
+  </script>
 </body>
 </html>
