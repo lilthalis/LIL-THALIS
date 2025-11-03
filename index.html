@@ -1,189 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lil Thalis — Official Site</title>
-  <!-- FAVICON -->
-<link rel="icon" type="image/x-icon" href="Icon/OIG3.MPuV7bV.jpg">
-
-<!-- LOGO PARA META EMBEDS (whatsapp, discord, etc) -->
-<link rel="apple-touch-icon" href="Icon/OIG3.MPuV7bV.jpg">
-<meta property="og:image" content="logo-vinil.png">
-<meta name="theme-color" content="#6d3bdc">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #faf7ff;
-      color: #3a2b4b;
-    }
-    header {
-      text-align: center;
-      padding: 3rem 1rem 1rem 1rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #b18cff;
-      letter-spacing: 2px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #7d5fff;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background-color: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(150, 100, 255, 0.1);
-    }
-
-    h2 {
-      color: #9b7aff;
-      margin-bottom: 1rem;
-    }
-
-    .album-section img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-    }
-
-    .fanart-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .fanart-grid img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(150, 100, 255, 0.2);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #8a7ca8;
-    }
-
-    .newsletter {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    input[type="email"] {
-      padding: 0.6rem;
-      border: 1px solid #c7b6ff;
-      border-radius: 6px;
-      width: 250px;
-      margin-right: 0.5rem;
-    }
-
-    button {
-      background-color: #b18cff;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #a47cff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lil Thalis.com - Goth Angel Sinners</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>LIL THALIS</h1>
-    <nav>
-      
-    </nav>
-  </header>
+    <header class="header">
+        <h1 class="logo-title">LIL THALIS<span class="glitch">.COM</span></h1>
+        
+        <nav class="nav-menu">
+            <a href="#home" class="nav-link active">HOME</a>
+            <a href="#colecao" class="nav-link">COLEÇÃO</a>
+            <a href="#merch" class="nav-link">MERCH</a>
+            <a href="#contato" class="nav-link">CONTATO</a>
+        </nav>
+        
+        <button class="menu-toggle">☰</button>
+    </header>
 
-  <section id="album" class="album-section">
-    <h2>Even If You Don't Love Me</h2>
-    <img src="Albuns/even_if_you_dont_love_me.jpg" alt="Capa do álbum Even If You Don't Love Me">
-    <p>
-      O primeiro capítulo da história de Lil Thalis — uma jornada melancólica entre o amor, a dor e a beleza. Este álbum nasceu de noites longas e pensamentos sobre o amor que insiste em doer, mas nunca morre. É sobre caminhar sozinho por ruas molhadas de neon, com o som do motor antigo e o coração batendo fora do tempo.
-    </p>
-  </section>
+    <main id="home" class="main-content">
+        <section class="hero-banner">
+            <p class="subtitle y2k-font">Bem-vindo ao Lado Escuro.</p>
+            <h2 class="hero-text">"Pensei que estava no inferno, mas a vida é pior..."</h2>
+            <a href="#colecao" class="cta-button">EXPLORAR COLEÇÃO »</a>
+        </section>
 
-  <section id="lyrics">
-    <h2>Letras & Poemas</h2>
-    <p><strong>Corações em cinzas!</strong><br>
-    Deixo meus pensamentos pra dormir melhor<br>
-    A maré me fala quando apago o sol...</p>
-  </section>
+        <section id="colecao" class="media-collection">
+            <h3 class="section-title y2k-font">ARQUIVOS DE MÍDIA</h3>
+            <div class="collection-layout">
+                <div class="main-product">
+                    <img src="https://via.placeholder.com/600x400/400040/FFFFFF?text=HOTEL+ALBUM" alt="Álbum Principal Hotel" class="main-product-img">
+                    <h4 class="product-title y2k-font">HOTEL ALBUM</h4>
+                    <p class="product-description">Uma jornada sonora pela melancolia e o caos. Vinil roxo translúcido.</p>
+                    <a href="#" class="product-link">COMPRAR AGORA »</a>
+                </div>
+                <div class="other-products-grid">
+                    <div class="other-product-card">
+                        <img src="https://via.placeholder.com/200x200/8B0000/FFFFFF?text=CD+GRAVE" alt="CD Grave" class="other-product-img">
+                        <h5 class="other-product-title y2k-font">GRAVE CD</h5>
+                        <p class="other-product-price">$12.99</p>
+                    </div>
+                    <div class="other-product-card">
+                        <img src="https://via.placeholder.com/200x200/3A003A/FFFFFF?text=CASSETTE" alt="Cassette" class="other-product-img">
+                        <h5 class="other-product-title y2k-font">CASSETTE MIX</h5>
+                        <p class="other-product-price">$9.99</p>
+                    </div>
+                    <div class="other-product-card">
+                        <img src="https://via.placeholder.com/200x200/FF1493/FFFFFF?text=VINYL+DARK" alt="Vinyl Dark" class="other-product-img">
+                        <h5 class="other-product-title y2k-font">DARK VINYL</h5>
+                        <p class="other-product-price">$29.99</p>
+                    </div>
+                    <div class="other-product-card">
+                        <img src="https://via.placeholder.com/200x200/121212/FFFFFF?text=BOOKLET" alt="Booklet" class="other-product-img">
+                        <h5 class="other-product-title y2k-font">LYRIC BOOKLET</h5>
+                        <p class="other-product-price">$5.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="fanart">
-    <h2>Fan Art</h2>
-    <div class="fanart-grid">
-      <img src="fan1.jpg" alt="Fan art 1">
-      <img src="fan2.jpg" alt="Fan art 2">
-      <img src="fan3.jpg" alt="Fan art 3">
-    </div>
+        <section id="merch" class="merch-grid">
+            <h3 class="section-title y2k-font">MERCHANDISING OFICIAL</h3>
+            <div class="merch-items-container">
+                <div class="merch-item-card">
+                    <img src="https://via.placeholder.com/300x300/400040/FFFFFF?text=HOODIE+I" alt="Hoodie Gothic" class="merch-item-img">
+                    <h4 class="merch-item-title y2k-font">HOODIE "GOTH ANGEL"</h4>
+                    <p class="merch-item-price">$65.00</p>
+                </div>
+                <div class="merch-item-card">
+                    <img src="https://via.placeholder.com/300x300/8B0000/FFFFFF?text=TSHIRT+LOGO" alt="T-Shirt Logo" class="merch-item-img">
+                    <h4 class="merch-item-title y2k-font">T-SHIRT "LIL THALIS"</h4>
+                    <p class="merch-item-price">$30.00</p>
+                </div>
+                <div class="merch-item-card">
+                    <img src="https://via.placeholder.com/300x300/3A003A/FFFFFF?text=HOODIE+II" alt="Hoodie Broken" class="merch-item-img">
+                    <h4 class="merch-item-title y2k-font">HOODIE "BROKEN HEART"</h4>
+                    <p class="merch-item-price">$65.00</p>
+                </div>
+                <div class="merch-item-card">
+                    <img src="https://via.placeholder.com/300x300/FF1493/FFFFFF?text=TSHIRT+SKULL" alt="T-Shirt Skull" class="merch-item-img">
+                    <h4 class="merch-item-title y2k-font">T-SHIRT "SKULL BLOSSOM"</h4>
+                    <p class="merch-item-price">$30.00</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
 
-  </section>
-
-  <section id="about">
-    <h2>Sobre Lil Thalis</h2>
-    <p>
-      Lil Thalis é um artista independente que cria música, poesia e arte a partir de sentimentos reais. Cada álbum é um pedaço da alma — uma mistura de dor, amor e esperança que se traduz em som e cor.
-    </p>
-  </section>
-  
-  <section class="welcome-section" style="max-width: 900px; margin: 80px auto; color: #3d2a57; font-family: 'Helvetica Neue', sans-serif; line-height: 1.8; font-size: 18px; text-align: left;">
-
-  <h2 style="font-size: 28px; font-weight: 600; color: #8b5cf6; margin-bottom: 20px;">Bem-vindo.</h2>
-
-  <p>Este é o site oficial de <strong>Lil Thalis</strong> — um espaço criado para celebrar, guardar e compartilhar cada parte da minha caminhada, minhas músicas, pensamentos e momentos que marcaram minha vida.</p>
-
-  <p>O site é administrado por mim, junto de pessoas próximas que acreditam na minha arte, e no que ela representa. Aqui é onde tudo se mantém vivo — cada som, cada palavra, cada lembrança.</p>
-
-  <p>Criei este lugar para os fãs, amigos e todos que se conectaram comigo através da música. Porque sei que cada verso, cada canção, carrega um pedaço de mim e também de quem me escuta.</p>
-
-  <p>Quando um dia eu não estiver mais aqui, este site continuará existindo como um <strong>memorial</strong> — um espaço para que todos possam ver e sentir tudo o que vivi. Aqui ficarão as minhas histórias, fotos, vídeos, letras, e tudo aquilo que construí com o coração.</p>
-
-  <p>Obrigado por estar aqui e por fazer parte dessa jornada.  
-  <br><strong>– Lil Thalis</strong></p>
-
-  <hr style="margin: 40px 0; border: none; border-top: 1px solid #e5e5e5;">
-
-</section>
-
-
-  <section id="contact">
-    <h2>Contato</h2>
-    <p>Para parcerias, envios de fan arts ou mensagens, envie para <a href="mailto:gabrielthalison188@gmail.com">gabrielthalison188@gmail.com</a>.</p>
-  </section>
-
-  <section class="newsletter">
-    <h2>Receba novidades</h2>
-    <input type="email" placeholder="Seu e-mail">
-    <button>Inscrever-se</button>
-  </section>
-
-  <footer>
-    <p>© 2025 Lil Thalis — Designed with 💜 by Lil Thalis</p>
-  </footer>
+    <footer id="contato" class="footer">
+        <h4 class="footer-title y2k-font">CONTATO & REDES:</h4>
+        <div class="social-links">
+            <a href="#" class="social-link" title="Instagram">INSTAGRAM</a>
+            <a href="#" class="social-link" title="GitHub">GITHUB</a>
+            <a href="#" class="social-link" title="Spotify">SPOTIFY</a>
+        </div>
+        <p class="copyright">© 2025 LIL THALIS. Todos os Direitos Reservados (Ou Não).</p>
+    </footer>
 
 </body>
 </html>
