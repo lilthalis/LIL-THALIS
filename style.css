@@ -1,108 +1,228 @@
+/* -------------------------------------- */
+/* 0. CONFIGURAÇÕES GLOBAIS / RESET */
+/* -------------------------------------- */
+
+:root {
+    /* Cores Emo-Punk / Y2K */
+    --cor-fundo-dark: #121212;
+    --cor-acento-rosa: #FF1493; /* Rosa Choque */
+    --cor-acento-vermelho: #8B0000; /* Vermelho Escuro */
+    --cor-texto-claro: #F5F5F5;
+    --cor-borda-cinza: #606060;
+
+    /* Fontes */
+    --fonte-destaque: 'Press Start 2P', monospace; /* Para títulos Y2K */
+    --fonte-corpo: 'UnifrakturMaguntia', serif; /* Para textos principais (gótico) */
+    --fonte-limpa: sans-serif; /* Para descrições e links */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho final */
+}
+
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: #222;
-  text-align: center;
+    background-color: var(--cor-fundo-dark);
+    color: var(--cor-texto-claro);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+    min-height: 100vh; /* Ocupa a altura mínima da viewport */
 }
 
-header {
-  background-color: #f3eaff;
-  padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+a {
+    color: var(--cor-acento-rosa);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  margin: 0;
-  color: #7b2cbf;
+a:hover {
+    color: var(--cor-acento-vermelho);
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #7b2cbf;
-  font-weight: 600;
-  transition: color 0.2s;
+/* Títulos com a fonte pixelada para a estética Y2K */
+.y2k-font {
+    font-family: var(--fonte-destaque);
+    text-transform: uppercase;
 }
 
-nav a:hover {
-  color: #5a189a;
+/* -------------------------------------- */
+/* 1. CABEÇALHO (HEADER) */
+/* -------------------------------------- */
+
+.header {
+    background-color: #000000;
+    padding: 1.5rem 2rem;
+    border-bottom: 3px solid var(--cor-acento-vermelho); /* Borda dura */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hero {
-  padding: 60px 20px;
+.logo-title {
+    font-family: var(--fonte-destaque);
+    font-size: 1.5rem;
+    color: var(--cor-acento-rosa);
 }
 
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  color: #5a189a;
+.glitch {
+    color: var(--cor-acento-vermelho); /* Simula um "glitch" */
 }
 
-.alt-bg {
-  background-color: #f9f7fb;
-  padding: 40px 20px;
+.nav-menu {
+    display: flex; /* Garante que os links fiquem em linha no desktop */
 }
 
-.rounded {
-  border-radius: 12px;
-  margin-top: 15px;
-  width: 250px;
+.nav-menu a {
+    color: var(--cor-texto-claro);
+    margin-left: 20px;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    font-family: var(--fonte-limpa);
+    text-transform: uppercase;
+    font-size: 0.85rem;
 }
 
-.fanarts img {
-  margin: 10px;
-  width: 180px;
-  border-radius: 8px;
-  transition: transform 0.3s;
+.nav-menu a:hover,
+.nav-menu a.active { /* Adicionado estado ativo */
+    color: var(--cor-acento-rosa);
+    border-color: var(--cor-acento-rosa); /* Efeito de botão com borda dura */
 }
 
-.fanarts img:hover {
-  transform: scale(1.05);
+/* Esconde o botão de toggle por padrão (só aparece no mobile) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cor-acento-rosa);
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-form {
-  margin-top: 15px;
+/* -------------------------------------- */
+/* 2. SEÇÃO PRINCIPAL (HERO) */
+/* -------------------------------------- */
+
+.main-content {
+    padding: 2rem;
 }
 
-input[type="email"] {
-  padding: 10px;
-  border: 2px solid #7b2cbf;
-  border-radius: 6px;
-  width: 250px;
+.hero-banner {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #1a1a1a;
+    border: 3px solid var(--cor-borda-cinza);
+    margin-bottom: 3rem;
 }
 
-button {
-  background-color: #7b2cbf;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  margin-left: 10px;
-  cursor: pointer;
-  font-weight: 600;
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--cor-acento-rosa);
+    margin-bottom: 0.5rem;
 }
 
-button:hover {
-  background-color: #5a189a;
+.hero-text {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--fonte-corpo); /* Fonte gótica para o texto principal */
 }
 
-footer {
-  background-color: #f3eaff;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 2px solid #e0c8ff;
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-acento-vermelho);
+    color: white;
+    padding: 10px 20px;
+    font-family: var(--fonte-destaque);
+    font-size: 0.75rem;
+    border: 3px solid var(--cor-texto-claro);
 }
 
-.socials a {
-  margin: 0 10px;
-  color: #7b2cbf;
-  text-decoration: none;
-  font-weight: 600;
+.cta-button:hover {
+    background-color: var(--cor-acento-rosa);
+    transform: scale(1.05);
+    transition: all 0.2s ease;
 }
 
-.socials a:hover {
-  color: #5a189a;
+/* -------------------------------------- */
+/* 3. SEÇÕES DE PRODUTOS/MÍDIA/MERCH */
+/* -------------------------------------- */
+
+.section-title {
+    font-family: var(--fonte-destaque);
+    font-size: 1.2rem;
+    color: var(--cor-acento-rosa);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--cor-acento-vermelho); /* Linha divisória */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+/* --- COLEÇÃO DE MÍDIA (CDs, Vinis) --- */
+.media-collection {
+    margin-bottom: 4rem;
+}
+
+.collection-layout {
+    display: grid;
+    /* Layout de duas colunas: 1 grande e 1 para a grid de 2x2 */
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+    max-width: 1200px; /* Limite de largura para o layout */
+    margin: 0 auto; /* Centraliza */
+    align-items: start; /* Alinha o conteúdo ao topo */
+}
+
+.main-product {
+    background-color: #1f1f1f;
+    border: 3px solid var(--cor-acento-rosa);
+    padding: 20px;
+    text-align: center;
+}
+
+.main-product-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid var(--cor-borda-cinza);
+}
+
+.product-title {
+    font-family: var(--fonte-destaque);
+    font-size: 1.3rem;
+    color: var(--cor-acento-vermelho);
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-family: var(--fonte-limpa);
+    font-size: 1rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 1.5rem;
+}
+
+.product-link {
+    font-family: var(--fonte-destaque);
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid var(--cor-acento-rosa);
+}
+
+.product-link:hover {
+    background-color: var(--cor-acento-rosa);
+    color: #000;
+}
+
+.other-products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid para os outros produtos */
+    gap: 20px;
+}
+
+.other-product-card {
+    background-color: #1f1f1f;
+    border:
