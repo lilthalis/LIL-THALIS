@@ -1,7 +1,8 @@
 // 1. Armazena os elementos HTML que o JS precisa manipular
 const carouselItems = document.querySelectorAll('.carousel-item');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn'); // Deve usar .prev-btn
+const nextBtn = document.querySelector('.next-btn'); // Deve usar .next-btn
+// ...
 let currentSlide = 0; // Começa no primeiro slide (índice 0)
 
 // 2. Função principal para exibir um slide específico
