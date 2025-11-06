@@ -45,3 +45,7 @@ function startAutoplay() {
 // 5. Inicializa o carrossel (mostra o primeiro slide e inicia o autoplay)
 showSlide(currentSlide);
 // startAutoplay(); // Descomente esta linha se quiser que o carrossel seja automático
+// script.js (Parte de Seletores)
+const prevBtn = document.querySelector('.prev-btn'); // Deve usar .prev-btn
+const nextBtn = document.querySelector('.next-btn'); // Deve usar .next-btn
+// ...
