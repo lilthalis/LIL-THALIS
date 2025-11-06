@@ -133,9 +133,20 @@ footer {
   box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+.carousel-container {
+    /* Define a altura e a largura do seu carrossel */
+    width: 100%;
+    height: 500px; /* Ajuste conforme a necessidade */
+    position: relative;
+    overflow: hidden;
+
+    /* A Mágica do Fundo Visual */
+    background-image: url('Albuns/even_if_you_dont_love_me.jpg');
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center;
+    background-color: #1a0033; /* Cor de fallback, estilo dark/roxo */
+    /* Efeito de escurecimento para o texto se destacar */
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
 }
 
 .slide {
