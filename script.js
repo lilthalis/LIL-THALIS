@@ -1,23 +1,47 @@
-<script>
-  const slides = document.querySelectorAll('.slide');
-  const nextBtn = document.querySelector('.next');
-  const prevBtn = document.querySelector('.prev');
-  let current = 0;
+// 1. Armazena os elementos HTML que o JS precisa manipular
+const carouselItems = document.querySelectorAll('.carousel-item');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let currentSlide = 0; // Começa no primeiro slide (índice 0)
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if(i === index) slide.classList.add('active');
+// 2. Função principal para exibir um slide específico
+function showSlide(index) {
+    // Garante que o índice não saia dos limites (loop infinito)
+    if (index >= carouselItems.length) {
+        currentSlide = 0; // Volta para o primeiro
+    } else if (index < 0) {
+        currentSlide = carouselItems.length - 1; // Vai para o último
+    } else {
+        currentSlide = index;
+    }
+
+    // Esconde TODOS os slides
+    carouselItems.forEach(item => {
+        item.classList.remove('active');
     });
-  }
 
-  nextBtn.addEventListener('click', () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  });
+    // Mostra APENAS o slide atual
+    carouselItems[currentSlide].classList.add('active');
+    
+    // NOTA: Você faria o mesmo para os 'dots' (indicadores) aqui, se quisesse.
+}
 
-  prevBtn.addEventListener('click', () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-  });
-</script>
+// 3. Adiciona ouvintes de evento aos botões
+prevBtn.addEventListener('click', () => {
+    showSlide(currentSlide - 1); // Volta um slide
+});
+
+nextBtn.addEventListener('click', () => {
+    showSlide(currentSlide + 1); // Avança um slide
+});
+
+// 4. (Opcional) Função para autoplay
+function startAutoplay() {
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 5000); // Troca a cada 5 segundos (5000 milissegundos)
+}
+
+// 5. Inicializa o carrossel (mostra o primeiro slide e inicia o autoplay)
+showSlide(currentSlide);
+// startAutoplay(); // Descomente esta linha se quiser que o carrossel seja automático
