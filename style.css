@@ -193,3 +193,25 @@ footer {
 
 .prev { left: 10px; }
 .next { right: 10px; }
+
+/* style.css */
+.caption {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    /* --- ADICIONE ESTAS DUAS LINHAS --- */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Adiciona transição para suavidade */
+    /* style.css */
+/* ... (código anterior do .caption) ... */
+
+/* Mostra a legenda APENAS quando o slide estiver ativo */
+.carousel-item.active .caption {
+    opacity: 1;
+    visibility: visible;
+}
+}
