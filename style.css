@@ -334,3 +334,36 @@ footer {
     bottom: 20px;
     /* ... mantenha o resto ou ajuste ... */
 }
+/* style.css */
+
+/* Botões (Setas) */
+.navigation-btn {
+    /* ... (mantenha o CSS anterior) ... */
+    z-index: 5; /* Aumente este valor se necessário, para ter certeza que estão na frente */
+    /* ... (mantenha o CSS anterior) ... */
+}
+
+/* Para o estilo que aparece na sua última imagem, use estas posições mais 'padrão': */
+.prev-btn {
+    left: 20px; /* Mais à esquerda */
+    top: 50%;
+    transform: translateY(-50%);
+    text-indent: 0; /* Mostra o texto 'Prev' */
+    font-size: 2em;
+    padding: 10px 15px; /* Volta para o formato de botão */
+    border-radius: 5px;
+    background-color: rgba(75, 0, 130, 0.7); /* Cor de fundo roxa */
+    color: #fff;
+}
+
+.next-btn {
+    right: 20px; /* Mais à direita */
+    top: 50%;
+    transform: translateY(-50%);
+    text-indent: 0; /* Mostra o texto 'Next' */
+    font-size: 2em;
+    padding: 10px 15px; /* Volta para o formato de botão */
+    border-radius: 5px;
+    background-color: rgba(75, 0, 130, 0.7); /* Cor de fundo roxa */
+    color: #fff;
+}

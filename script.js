@@ -47,6 +47,14 @@ function startAutoplay() {
 showSlide(currentSlide);
 // startAutoplay(); // Descomente esta linha se quiser que o carrossel seja automático
 // script.js (Parte de Seletores)
-const prevBtn = document.querySelector('.prev-btn'); // Deve usar .prev-btn
-const nextBtn = document.querySelector('.next-btn'); // Deve usar .next-btn
-// ...
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // TODO SEU CÓDIGO JS VAI AQUI DENTRO, INCLUINDO:
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.prev-btn'); 
+    // ...
+    // E os EVENTOS DE CLIQUE:
+    prevBtn.addEventListener('click', () => { ... });
+    nextBtn.addEventListener('click', () => { ... });
+    // ...
+});
