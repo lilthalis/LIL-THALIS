@@ -1,218 +1,94 @@
+/* ======================================= */
+/* ARQUIVO style.css COMPLETO E UNIFICADO  */
+/* ======================================= */
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO GERAL (Fundo Branco/Lilás) */
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: #222;
-  text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8; /* Fundo branco suave */
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-
-header {
-  background-color: #f3eaff;
-  padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* CONTAINER GERAL - Centraliza e define espaçamento "Gigante" */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  margin: 0;
-  color: #7b2cbf;
+/* CABEÇALHO */
+.main-header {
+    text-align: center;
+    padding: 80px 0 40px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
 }
 
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #7b2cbf;
-  font-weight: 600;
-  transition: color 0.2s;
+.site-title {
+    font-size: 5em;
+    font-weight: 700;
+    color: #4b0082; /* Lilás escuro */
+    letter-spacing: 5px;
+    text-transform: uppercase;
 }
 
-
-nav a:hover {
-  color: #5a189a;
+/* SEÇÃO BEM-VINDO (LIL THALIS - O ARTISTA) */
+.welcome-section {
+    background-color: #fff;
+    text-align: center;
+    padding: 100px 0; /* Espaçamento interno gigante */
+    border-bottom: 1px solid #eee;
 }
 
-
-.hero {
-  padding: 60px 20px;
+.profile-pic-large {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 40px;
+    border: 5px solid #d8bfd8;
 }
 
-
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  color: #5a189a;
+.welcome-text {
+    font-size: 1.8em;
+    color: #8a2be2; /* Lilás vibrante */
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
-
-.alt-bg {
-  background-color: #f9f7fb;
-  padding: 40px 20px;
+.section-heading {
+    font-size: 3.5em; /* Títulos de seção grandes */
+    text-transform: uppercase;
+    color: #4b0082;
+    margin-bottom: 60px;
 }
 
-
-.rounded {
-  border-radius: 12px;
-  margin-top: 15px;
-  width: 250px;
-}
-
-
-.fanarts img {
-  margin: 10px;
-  width: 180px;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-
-.fanarts img:hover {
-  transform: scale(1.05);
-}
-
-
-form {
-  margin-top: 15px;
-}
-
-
-input[type="email"] {
-  padding: 10px;
-  border: 2px solid #7b2cbf;
-  border-radius: 6px;
-  width: 250px;
-}
-
-
-button {
-  background-color: #7b2cbf;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  margin-left: 10px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-
-button:hover {
-  background-color: #5a189a;
-}
-
-
-footer {
-  background-color: #f3eaff;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 2px solid #e0c8ff;
-}
-
-
-.socials a {
-  margin: 0 10px;
-  color: #7b2cbf;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-
-.socials a:hover {
-  color: #5a189a;
-}
-
-.carousel-container {
-  width: 80%;
-  margin: 2rem auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
-}
-
-.carousel-container {
-    /* Define a altura e a largura do seu carrossel */
-    width: 100%;
-    height: 500px; /* Ajuste conforme a necessidade */
-    position: relative;
-    overflow: hidden;
-
-    /* A Mágica do Fundo Visual */
-    background-image: url('Albuns/even_if_you_dont_love_me.jpg');
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center;
-    background-color: #1a0033; /* Cor de fallback, estilo dark/roxo */
-    /* Efeito de escurecimento para o texto se destacar */
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
-}
-
-.slide {
-  min-width: 100%;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  position: relative;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-.slide img {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.caption {
-  position: absolute;
-  bottom: 15px;
-  left: 20px;
-  color: white;
-  font-size: 1.3rem;
-  text-shadow: 2px 2px 10px black;
-  font-weight: 500;
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  border: none;
-  padding: 12px 18px;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 1.8rem;
-}
-.prev:hover, .next:hover {
-  background: rgba(0,0,0,0.8);
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-/* style.css */
-
-/* --- SEÇÃO DO CARROSSEL CORRIGIDA PARA O ESTILO LIL PEEP (CASTELO) --- */
+/* ======================================= */
+/* ESTILO DO CARROSSEL (LIL PEEP STORY)    */
+/* ======================================= */
 
 .carousel-section {
-    background-color: #f0e6fa; /* Fundo lilás bem suave */
-    padding: 0; /* Remove padding externo para o carrossel ocupar a largura total */
+    background-color: #f0e6fa; /* Fundo lilás suave da seção */
+    padding: 0; 
 }
 
 .carousel-container {
     position: relative;
-    width: 100%; /* Ocupa a largura total da seção */
-    max-width: none; /* Remove a limitação de largura */
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
     overflow: hidden;
-    height: 700px; /* Aumente esta altura para o seu carrossel ficar "gigante" */
-    border-radius: 0; 
-    box-shadow: none; 
-    background-color: #333; 
+    height: 700px; /* ALTURA GIGANTE DO CARROSSEL */
+    background-color: #333;
 }
 
 .carousel-item {
@@ -223,6 +99,7 @@ footer {
     top: 0;
     left: 0;
     opacity: 0; 
+    /* Transição de Opacidade para Suavidade */
     transition: opacity 1s ease-in-out; 
 }
 
@@ -231,201 +108,47 @@ footer {
     opacity: 1; 
 }
 
-/* 🛑 AQUI ESTÁ A CHAVE PARA A IMAGEM DE FUNDO GRANDE E PREENCHIDA */
+/* IMAGEM DE FUNDO (Preenchendo e Escurecendo) */
 .slide-bg {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a imagem preencher a área sem distorcer (como no castelo) */
+    object-fit: cover; /* Garante que a imagem preencha a tela */
     position: absolute; 
     top: 0;
     left: 0;
-    z-index: 0; /* Garante que fique no fundo */
-    filter: brightness(0.6); /* Escurece para o texto branco se destacar */
+    z-index: 0; 
+    filter: brightness(0.6); /* Escurece a imagem para o texto branco */
 }
 
 .carousel-content-wrapper {
     position: relative;
-    z-index: 1; /* Acima da imagem de fundo */
+    z-index: 1; 
     width: 100%;
     height: 100%;
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Empurra o topo para cima e a legenda para baixo */
+    justify-content: space-between; /* Alinha topo/roda-pé */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
 }
 
+/* INFORMAÇÕES DO TOPO (Lil Thalis Music / 1/X) */
 .top-info {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     color: #fff;
     font-size: 1.5em;
     font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* LEGENDA CORRIGIDA (Posição no canto inferior esquerdo, estilo Lil Peep) */
-.caption {
-    /* Tiramos as propriedades de visibility/opacity daqui para o JS controlar */
-    color: #fff;
-    text-align: left; /* Alinhamento à esquerda */
-    width: 40%; /* Ocupa uma porcentagem da largura, como no site */
-    padding: 0;
-    margin-bottom: 50px; /* Distância da parte de baixo */
-}
-
-.caption-title {
-    font-size: 3.5em; /* Título bem grande */
-    margin-bottom: 20px;
-    line-height: 1.1;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
-}
-
-.caption-text {
-    font-size: 1.2em;
-    margin-bottom: 25px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-}
-
-/* 🛑 CORREÇÃO DOS BOTÕES (SETAS) - Invisíveis no fundo do castelo/Peep */
-.navigation-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none; /* Fundo transparente */
-    color: #fff;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 2em;
-    opacity: 0.7; /* Suavemente visível */
-    transition: opacity 0.3s ease;
-    z-index: 5;
-    /* Linhas para o texto prev/next do peep.com */
-    width: 50px; 
-    height: 50px;
-    text-indent: -9999px; /* Esconde o texto da seta se for 'Prev'/'Next' */
-}
-
-.navigation-btn:hover {
-    opacity: 1;
-}
-
-/* Pequenas setas no canto direito, como no exemplo */
-.prev-btn {
-    right: 50px; /* Posição à direita, perto do next */
-    top: 40px; /* Posição no topo */
-    transform: none;
-    font-size: 1em; /* Fonte menor */
-    text-indent: 0; /* Mostra o texto "Prev" */
-    color: #aaa;
-}
-
-.next-btn {
-    right: 20px;
-    top: 40px;
-    transform: none;
-    font-size: 1em;
-    text-indent: 0; /* Mostra o texto "Next" */
-    color: #fff; /* O Next está branco no exemplo */
-}
-
-/* Você pode remover a seção de .carousel-dots se quiser o visual idêntico ao Lil Peep, ou mantê-la e reposicioná-la */
-
-.carousel-dots {
-    bottom: 20px;
-    /* ... mantenha o resto ou ajuste ... */
-}
-/* style.css */
-
-/* Botões (Setas) */
-.navigation-btn {
-    /* ... (mantenha o CSS anterior) ... */
-    z-index: 5; /* Aumente este valor se necessário, para ter certeza que estão na frente */
-    /* ... (mantenha o CSS anterior) ... */
-}
-
-/* style.css */
-
-/* Remova o fundo e deixe os botões como texto puro */
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none; /* AGORA É TRANSPARENTE */
-    color: #fff;
-    border: none;
-    padding: 10px; /* Reduza o padding */
-    cursor: pointer;
-    font-size: 1.2em; /* Tamanho da fonte menor (como no Lil Peep) */
-    opacity: 0.8; 
-    transition: opacity 0.3s ease;
-    z-index: 5;
-    text-transform: uppercase;
-}
-
-.prev-btn:hover, .next-btn:hover {
-    opacity: 1;
-}
-
-/* Posicionamento à direita, como no exemplo (Prev mais acima) */
-.prev-btn {
-    right: 35px; /* Posição à direita, perto do Next */
-    top: calc(50% - 20px); /* Levemente acima do centro */
-}
-
-.next-btn {
-    right: 35px;
-    top: calc(50% + 20px); /* Levemente abaixo do centro */
-}
-
-/* Ajuste do Bloco de Texto (Legenda) - Maior e mais para a esquerda */
+/* BLOCO DE HISTÓRIA/LEGENDA (Estilo Lil Peep) */
 .caption {
     color: #fff;
     text-align: left;
-    width: 60%; /* Aumente a largura da caixa de texto para o estilo "história grande" */
-    padding: 0 0 0 40px; /* Padding à esquerda para afastar da borda */
-    margin-bottom: 50px; 
-}
-
-/* style.css */
-
-/* Remova o fundo e deixe os botões como texto puro */
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none; /* AGORA É TRANSPARENTE */
-    color: #fff;
-    border: none;
-    padding: 10px; /* Reduza o padding */
-    cursor: pointer;
-    font-size: 1.2em; /* Tamanho da fonte menor (como no Lil Peep) */
-    opacity: 0.8; 
-    transition: opacity 0.3s ease;
-    z-index: 5;
-    text-transform: uppercase;
-}
-
-.prev-btn:hover, .next-btn:hover {
-    opacity: 1;
-}
-
-/* Posicionamento à direita, como no exemplo (Prev mais acima) */
-.prev-btn {
-    right: 35px; /* Posição à direita, perto do Next */
-    top: calc(50% - 20px); /* Levemente acima do centro */
-}
-
-.next-btn {
-    right: 35px;
-    top: calc(50% + 20px); /* Levemente abaixo do centro */
-}
-
-/* Ajuste do Bloco de Texto (Legenda) - Maior e mais para a esquerda */
-.caption {
-    color: #fff;
-    text-align: left;
-    width: 60%; /* Aumente a largura da caixa de texto para o estilo "história grande" */
-    padding: 0 0 0 40px; /* Padding à esquerda para afastar da borda */
+    width: 60%; /* Largura da caixa de texto grande */
+    padding: 0 0 0 40px; 
     margin-bottom: 50px; 
 }
 
@@ -437,14 +160,14 @@ footer {
 }
 
 .caption-text {
-    font-size: 1.6em; /* Texto da história maior */
+    font-size: 1.6em; /* Texto da história grande */
     margin-bottom: 25px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 .btn-read-more {
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente (Lil Peep style) */
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
     color: #fff;
     padding: 15px 30px;
     text-decoration: none;
@@ -457,4 +180,119 @@ footer {
 
 .btn-read-more:hover {
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* BOTÕES DE NAVEGAÇÃO (SETAS) - Minimalista, apenas texto */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Sem fundo */
+    color: #fff;
+    border: none;
+    padding: 10px; 
+    cursor: pointer;
+    font-size: 1.2em; /* Texto pequeno */
+    opacity: 0.8; 
+    transition: opacity 0.3s ease;
+    z-index: 5;
+    text-transform: uppercase;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    opacity: 1;
+}
+
+/* Posicionamento dos botões (Prev e Next lado a lado verticalmente) */
+.prev-btn {
+    right: 35px; 
+    top: calc(50% - 20px); 
+}
+
+.next-btn {
+    right: 35px;
+    top: calc(50% + 20px); 
+}
+
+/* Indicadores (Dots) - Mantidos, mas você pode removê-los se quiser o visual 100% Lil Peep */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 15px; 
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+
+/* ======================================= */
+/* ESTILO DAS OUTRAS SEÇÕES (Produtos/Histórias) */
+/* ======================================= */
+
+.products-section, .about-section {
+    background-color: #fff;
+    padding: 100px 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.product-grid, .story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.product-item, .story-item {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover, .story-item:hover {
+    transform: translateY(-10px);
+}
+
+.product-item img, .story-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.product-item h3, .story-item h3 {
+    font-size: 2.2em;
+    color: #4b0082;
+    margin-bottom: 15px;
+}
+
+.product-item p, .story-item p {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* RODAPÉ */
+.main-footer {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #4b0082;
+    color: #fff;
+    font-size: 1.2em;
 }
