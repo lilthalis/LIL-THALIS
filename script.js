@@ -1,60 +1,116 @@
-// 1. Armazena os elementos HTML que o JS precisa manipular
-const carouselItems = document.querySelectorAll('.carousel-item');
-const prevBtn = document.querySelector('.prev-btn'); // Deve usar .prev-btn
-const nextBtn = document.querySelector('.next-btn'); // Deve usar .next-btn
-// ...
-let currentSlide = 0; // Começa no primeiro slide (índice 0)
+// =======================================
+// ARQUIVO script.js COMPLETO E FINAL
+// =======================================
 
-// 2. Função principal para exibir um slide específico
-function showSlide(index) {
-    // Garante que o índice não saia dos limites (loop infinito)
-    if (index >= carouselItems.length) {
-        currentSlide = 0; // Volta para o primeiro
-    } else if (index < 0) {
-        currentSlide = carouselItems.length - 1; // Vai para o último
-    } else {
-        currentSlide = index;
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Seletores
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const carouselDotsContainer = document.querySelector('.carousel-dots');
+    
+    // Elementos que serão criados
+    let dots; 
+    let currentSlide = 0;
+    let autoplayInterval; 
+
+    // 2. Função para criar os indicadores (dots)
+    function createDots() {
+        // Limpa o container antes de criar
+        carouselDotsContainer.innerHTML = ''; 
+        
+        carouselItems.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            
+            // Ativa o primeiro dot
+            if (index === 0) {
+                dot.classList.add('active');
+            }
+            
+            // Adiciona evento de clique para pular para o slide
+            dot.addEventListener('click', () => showSlide(index));
+            carouselDotsContainer.appendChild(dot);
+        });
+        
+        // Seleciona os dots criados para uso posterior
+        dots = document.querySelectorAll('.dot'); 
     }
 
-    // Esconde TODOS os slides
-    carouselItems.forEach(item => {
-        item.classList.remove('active');
+    // 3. Função principal para exibir um slide específico
+    function showSlide(index) {
+        // Reinicia o autoplay sempre que o slide muda (se o usuário clicar)
+        resetAutoplay();
+
+        // Lógica de loop infinito
+        if (index >= carouselItems.length) {
+            currentSlide = 0; 
+        } else if (index < 0) {
+            currentSlide = carouselItems.length - 1; 
+        } else {
+            currentSlide = index;
+        }
+
+        // Esconde todos os slides (remove a classe 'active')
+        carouselItems.forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Mostra APENAS o slide atual
+        carouselItems[currentSlide].classList.add('active');
+        
+        // Atualiza o contador de slides no topo (se você usar a classe .slide-counter)
+        const slideCounter = carouselItems[currentSlide].querySelector('.slide-counter');
+        if (slideCounter) {
+            slideCounter.textContent = `${currentSlide + 1}/${carouselItems.length}`;
+        }
+        
+        // Atualiza os indicadores (dots)
+        dots.forEach((dot, idx) => {
+            dot.classList.remove('active');
+            if (idx === currentSlide) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    // 4. Adiciona eventos de clique aos botões
+    prevBtn.addEventListener('click', () => {
+        showSlide(currentSlide - 1); 
     });
 
-    // Mostra APENAS o slide atual
-    carouselItems[currentSlide].classList.add('active');
-    
-    // NOTA: Você faria o mesmo para os 'dots' (indicadores) aqui, se quisesse.
-}
+    nextBtn.addEventListener('click', () => {
+        showSlide(currentSlide + 1); 
+    });
 
-// 3. Adiciona ouvintes de evento aos botões
-prevBtn.addEventListener('click', () => {
-    showSlide(currentSlide - 1); // Volta um slide
-});
+    // 5. Funções de Autoplay
+    function startAutoplay() {
+        // Define o intervalo para a troca automática (a cada 5 segundos)
+        autoplayInterval = setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000); 
+    }
 
-nextBtn.addEventListener('click', () => {
-    showSlide(currentSlide + 1); // Avança um slide
-});
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
 
-// 4. (Opcional) Função para autoplay
-function startAutoplay() {
-    setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000); // Troca a cada 5 segundos (5000 milissegundos)
-}
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
 
-// 5. Inicializa o carrossel (mostra o primeiro slide e inicia o autoplay)
-showSlide(currentSlide);
-// startAutoplay(); // Descomente esta linha se quiser que o carrossel seja automático
-// script.js (Parte de Seletores)
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-    // TODO SEU CÓDIGO JS VAI AQUI DENTRO, INCLUINDO:
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const prevBtn = document.querySelector('.prev-btn'); 
-    // ...
-    // E os EVENTOS DE CLIQUE:
-    prevBtn.addEventListener('click', () => { ... });
-    nextBtn.addEventListener('click', () => { ... });
-    // ...
+    // 6. Inicializa o carrossel quando a página carrega
+    if (carouselItems.length > 0) {
+        createDots(); 
+        showSlide(currentSlide); 
+        startAutoplay(); 
+
+        // Opcional: Pausar autoplay ao passar o mouse no carrossel
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', stopAutoplay);
+            carouselContainer.addEventListener('mouseleave', startAutoplay);
+        }
+    }
 });
