@@ -407,3 +407,66 @@ body {
     margin: 15px 0 10px 0; /* Espaçamento ajustado */
     line-height: 1.2;
 }
+/* style.css (Continuação) */
+
+/* Estilo do botão Voltar */
+.btn-back {
+    background: none;
+    border: 1px solid #ccc;
+    color: #4b0082;
+    padding: 10px 20px;
+    margin: 20px 0 40px 0;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #f0e6fa;
+}
+
+/* Estilo da História Completa (Full Story) */
+.full-story-article {
+    max-width: 800px; /* Limita a largura do texto para facilitar a leitura (como no Peep) */
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.story-cover-image {
+    max-width: 300px; /* Imagem/vinil no topo */
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.story-full-title {
+    font-size: 3.5em;
+    color: #4b0082;
+    margin-bottom: 5px;
+}
+
+.story-date {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.story-body {
+    text-align: left; /* O TEXTO GIGANTE VAI AQUI, ALINHADO À ESQUERDA */
+    font-size: 1.4em; /* Fonte grande */
+    line-height: 2; /* Espaçamento entre linhas GIGANTE (igual ao exemplo) */
+    color: #333;
+    padding: 0 20px;
+}
+
+.story-body p {
+    margin-bottom: 2em; /* Espaço grande entre parágrafos */
+}
+
+.story-section-heading {
+    font-size: 2em;
+    color: #4b0082;
+    margin: 30px 0 15px 0;
+    text-align: center;
+}

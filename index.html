@@ -33,55 +33,61 @@
         
         <h2 class="section-heading">LIL THALIS: HISTÓRIAS E FASES</h2>
         
-      <div class="blog-posts-grid">
-    
-    <article class="blog-post-item">
-        <img src="Albuns/even_if_you_dont_love_me.jpg" alt="Fase 1" class="post-main-image">
-        <h3 class="post-title-grid">Even If You Dont Love Me (O começo de tudo)</h3>
-        <p class="post-summary-grid">
-             <p class="post-summary-grid">
-                    Esta história detalha o início da carreira e as influências que moldaram o som do Lil Thalis. Um ano de descobertas e a primeira vez que a música se tornou a fuga e a paixão principal. O coração afundou, mas a gentileza e a ternura da música o fizeram perseverar.
-                </p>
-                <a href="historia-fase-1.html" class="btn-read-more-grid">Leia mais</a>
+        <div class="blog-posts-grid" id="blog-grid-view">
+            
+            <article class="blog-post-item">
+                <img src="Albuns/even_if_you_dont_love_me.jpg" alt="Fase 1" class="post-main-image">
+                <h3 class="post-title-grid">Even If You Dont Love Me (O começo de tudo)</h3>
+                <p class="post-summary-grid">Esta história detalha o início da carreira e as influências que moldaram... </p>
+                <a href="#" class="btn-read-more-grid open-story-btn" data-story-id="story-1">Leia mais</a>
             </article>
-
 
             <article class="blog-post-item">
                 <img src="caminho/para/escritos-thalis.jpg" alt="Escritos" class="post-main-image">
                 <h3 class="post-title-grid">OS ESCRITOS DE THALIS</h3>
-                <p class="post-summary-grid">
-                    Um olhar sobre os cadernos e rascunhos originais de Thalis. Pequenos poemas e letras que nunca foram lançadas, mas que mostram a emoção crua e a jornada lírica que o artista percorreu para encontrar sua voz única e sincera.
-                </p>
-                <a href="historia-escritos.html" class="btn-read-more-grid">Leia mais</a>
+                <p class="post-summary-grid">Um olhar sobre os cadernos e rascunhos originais de Thalis...</p>
+                <a href="#" class="btn-read-more-grid open-story-btn" data-story-id="story-2">Leia mais</a>
             </article>
-
 
             <article class="blog-post-item">
                 <img src="caminho/para/musicas-para-ouvir.jpg" alt="Músicas" class="post-main-image">
                 <h3 class="post-title-grid">MÚSICAS QUE USAMOS PARA OUVIR</h3>
-                <p class="post-summary-grid">
-                    Uma lista comentada das músicas de infância e adolescência que Thalis e sua equipe ouviam, e que serviram como pilares para a sonoridade característica do seu trabalho. Uma jornada nostálgica por influências de diferentes gêneros.
-                </p>
-                <a href="historia-influencias.html" class="btn-read-more-grid">Leia mais</a>
+                <p class="post-summary-grid">Uma lista comentada das músicas de infância e adolescência...</p>
+                <a href="#" class="btn-read-more-grid open-story-btn" data-story-id="story-3">Leia mais</a>
             </article>
-           
+            
         </div>
+        
+        <div id="full-story-view" style="display: none;">
+            
+            <button id="back-to-grid" class="btn-back">← Voltar para as Histórias</button>
 
-
-        </p>
-        <a href="historia-fase-1.html" class="btn-read-more-grid">Leia mais</a>
-    </article>
-
-    <article class="blog-post-item">
-        </article>
-
-    <article class="blog-post-item">
-        </article>
-
-</div>
+            <div id="story-content-area">
+                </div>
+            
+        </div>
         
     </div>
 </section>
+
+<template id="story-template-1">
+    <div class="full-story-article">
+        <img src="caminho/para/imagem-fase-1-grande.jpg" alt="Capa da História 1" class="story-cover-image">
+        <h1 class="story-full-title">Even If You Dont Love Me (O começo de tudo)</h1>
+        <p class="story-date">SET 18, 2024</p>
+        
+        <div class="story-body">
+            <p>Os garotos e eu nos matriculamos juntos na Escola Swan por um ano. Os alunos mais velhos no pré-jardim de infância nos davam carona. A escola, o pai de Gus e eu pensamos que seria bom para ele ser o mais novo em nossa família e que ele deveria ter sido o mais novo nas turmas de pré-jardim de infância, mas tínhamos ele na pré-escola no ano anterior... <br><br>Gus nasceu em Allentown, Pensilvânia. Viveu lá por um ano. Depois, moramos em Massachusetts por um ano. Voltamos para Long Island. Em 2003, nos mudamos para a Pensilvânia, onde moramos até 2013, quando nos mudamos para Long Island novamente. Depois, Gus foi para Los Angeles, onde viveu até 2017. </p>
+            
+            <h2 class="story-section-heading">Início (Beginnings)</h2>
+            <p>Gus fez amizade em plataformas online e teve aulas em sua casa no verão de 2014. Ele me enviou e-mails para eu checar os perfis dele no SoundCloud e Instagram. Naquela época, ele tinha um produtor e escolheu um nome de rap para ele, que era **LIL THALIS**. O produtor, e suas batidas enviadas via SoundCloud, Twitter, textos, e e-mails, sustentaram Gus durante um ponto baixo...</p>
+            
+            </div>
+    </div>
+</template>
+
+<template id="story-template-2">
+    </template>
 
 <section class="carousel-section">
     <div class="carousel-container">
