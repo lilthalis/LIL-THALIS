@@ -165,3 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// script.js (Parte 3: Adiciona ouvintes de evento aos botões "Leia Mais")
+
+openStoryBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault(); // <--- MANTENHA ESTA LINHA!
+        
+        const storyId = btn.getAttribute('data-story-id');
+        showFullStory(storyId);
+        
+        // --- ADICIONE ESTA LINHA PARA LIMPAR A HASHTAG SEM RECARREGAR ---
+        history.pushState(null, '', window.location.pathname); 
+    });
+});

@@ -470,3 +470,65 @@ body {
     margin: 30px 0 15px 0;
     text-align: center;
 }
+/* style.css (Ajustes para o Artigo de História Completa) */
+
+/* Centraliza o Título e Metadados */
+.story-full-title {
+    font-size: 3.5em;
+    color: #4b0082;
+    margin-bottom: 5px;
+}
+
+.story-meta {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.story-date {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Estilo das Redes Sociais (F, T, P, E) */
+.story-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 1.2em;
+    color: #ccc; /* Cor cinza sutil */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #4b0082; /* Lilás no hover */
+}
+
+/* Estilo do Subtítulo (se for usar) */
+.story-subtitle {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-style: italic;
+    max-width: 600px; /* Limita a largura para a citação */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo do Corpo do Texto (GIGANTE) */
+.story-body {
+    text-align: left; 
+    font-size: 1.4em; 
+    line-height: 2.2; /* Aumente o espaçamento entre linhas para o efeito "gigante" */
+    color: #333;
+    padding: 0 20px;
+}
+
+.story-body p {
+    margin-bottom: 2.5em; /* Espaço grande entre parágrafos GIGANTE */
+}
