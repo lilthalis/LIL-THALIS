@@ -362,3 +362,48 @@ body {
     padding: 0;
     cursor: pointer;
 }
+
+/* style.css */
+
+/* CONTAINER GERAL - Vamos aumentar para monitores maiores */
+.container {
+    max-width: 1400px; /* Aumente a largura máxima */
+    margin: 0 auto; 
+    padding: 40px 20px; 
+}
+
+/* Opcional: Se quiser que a seção de histórias seja ainda mais larga */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    /* Remova o max-width para que ele se ajuste ao container principal, que é 1400px agora */
+    /* max-width: 1200px; <--- REMOVA ESTA LINHA OU COMENTE */
+    margin: 60px auto 0 auto; 
+}
+
+/* style.css */
+
+/* Estilo do Item Individual (Postagem) */
+.blog-post-item {
+    text-align: left; 
+    /* Remove padding para deixar mais próximo da borda, como no exemplo */
+    padding: 0; 
+    /* Adiciona margem na parte inferior para separar as linhas futuras de grade, se houver */
+    margin-bottom: 30px; 
+}
+
+.post-main-image {
+    max-width: 100%; 
+    height: auto;
+    margin: 0 0 10px 0; /* Diminui o espaço entre a imagem e o título/texto */
+    display: block;
+    border-radius: 5px; 
+}
+
+.post-title-grid {
+    font-size: 1.8em; 
+    color: #4b0082;
+    margin: 15px 0 10px 0; /* Espaçamento ajustado */
+    line-height: 1.2;
+}
