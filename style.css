@@ -296,3 +296,86 @@ body {
     color: #fff;
     font-size: 1.2em;
 }
+
+/* ======================================= */
+/* ESTILO DA SEÇÃO DE BLOG/HISTÓRIA         */
+/* ======================================= */
+
+.blog-section {
+    background-color: #fff;
+    padding: 80px 0 100px 0;
+}
+
+.blog-container {
+    max-width: 900px; /* Container mais estreito para conteúdo de blog, como no exemplo */
+    text-align: center;
+}
+
+.blog-post-teaser {
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.post-header-image {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.post-main-image {
+    max-width: 300px; /* Tamanho da imagem central do item (ex: o Peep roxo) */
+    height: auto;
+    margin: 0 auto 30px auto;
+    display: block;
+}
+
+.post-icon {
+    max-width: 150px; /* Tamanho do ícone/logo (ex: o esqueleto 'SCHEMAPOSSE') */
+    margin: 20px auto;
+    display: block;
+}
+
+.post-date {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.post-title {
+    font-size: 3.5em; /* Título principal grande */
+    color: #4b0082;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Resumo do Artigo (Corpo do Texto) */
+.post-content-summary {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.post-summary {
+    font-size: 1.3em; /* Fonte grande e espaçada para leitura */
+    line-height: 1.8; /* Espaçamento entre linhas confortável */
+    color: #333;
+    text-align: justify; /* Justificado ou à esquerda, conforme a sua preferência */
+    margin-bottom: 40px;
+    padding: 0 40px; /* Padding para evitar que o texto encoste nas bordas */
+}
+
+/* Botão 'Leia mais' do artigo */
+.btn-read-more-blog {
+    display: inline-block;
+    background: none;
+    color: #8a2be2; /* Lilás */
+    border: none;
+    text-decoration: underline;
+    font-size: 1.2em;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-read-more-blog:hover {
+    color: #4b0082;
+}
