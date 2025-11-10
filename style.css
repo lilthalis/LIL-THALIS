@@ -298,84 +298,67 @@ body {
 }
 
 /* ======================================= */
-/* ESTILO DA SEÇÃO DE BLOG/HISTÓRIA         */
+/* AJUSTE: SEÇÃO DE BLOG PARA GRADE (3 COLUNAS) */
 /* ======================================= */
 
 .blog-section {
     background-color: #fff;
-    padding: 80px 0 100px 0;
+    padding: 100px 0; /* Aumenta o padding para espaçar as seções */
+    text-align: center; /* Centraliza títulos da seção */
 }
 
-.blog-container {
-    max-width: 900px; /* Container mais estreito para conteúdo de blog, como no exemplo */
-    text-align: center;
+/* Container do Post (Vai segurar a grade) */
+.blog-posts-grid {
+    display: grid;
+    /* Define 3 colunas flexíveis com um espaço (gap) generoso */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    max-width: 1200px; /* Alarga para caber 3 colunas */
+    margin: 60px auto 0 auto; /* Centraliza a grade */
 }
 
-.blog-post-teaser {
-    margin: 0 auto;
-    padding: 40px 0;
-}
-
-.post-header-image {
-    position: relative;
-    margin-bottom: 50px;
+/* Estilo do Item Individual (Postagem) */
+.blog-post-item {
+    text-align: left; /* Alinha o texto dentro do item à esquerda */
+    padding: 10px;
 }
 
 .post-main-image {
-    max-width: 300px; /* Tamanho da imagem central do item (ex: o Peep roxo) */
+    max-width: 100%; /* Imagem preenche a coluna */
     height: auto;
-    margin: 0 auto 30px auto;
+    /* Remove a margem 'auto' para o grid funcionar */
+    margin: 0 0 15px 0; 
     display: block;
+    border-radius: 5px; /* Suaviza as bordas da imagem */
 }
 
-.post-icon {
-    max-width: 150px; /* Tamanho do ícone/logo (ex: o esqueleto 'SCHEMAPOSSE') */
-    margin: 20px auto;
-    display: block;
-}
-
-.post-date {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.post-title {
-    font-size: 3.5em; /* Título principal grande */
+/* Estilo dos Títulos e Textos no Item de Grade */
+.post-title-grid {
+    font-size: 1.8em; /* Título um pouco menor para caber na coluna */
     color: #4b0082;
-    margin-bottom: 30px;
-    text-transform: uppercase;
+    margin: 10px 0;
+    line-height: 1.2;
 }
 
-/* Resumo do Artigo (Corpo do Texto) */
-.post-content-summary {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+.post-summary-grid {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+    /* Limita o resumo a algumas linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Mostrará no máximo 4 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
-.post-summary {
-    font-size: 1.3em; /* Fonte grande e espaçada para leitura */
-    line-height: 1.8; /* Espaçamento entre linhas confortável */
-    color: #333;
-    text-align: justify; /* Justificado ou à esquerda, conforme a sua preferência */
-    margin-bottom: 40px;
-    padding: 0 40px; /* Padding para evitar que o texto encoste nas bordas */
-}
-
-/* Botão 'Leia mais' do artigo */
-.btn-read-more-blog {
+.btn-read-more-grid {
     display: inline-block;
     background: none;
-    color: #8a2be2; /* Lilás */
+    color: #8a2be2;
     border: none;
     text-decoration: underline;
-    font-size: 1.2em;
-    padding: 10px 0;
+    font-size: 1em;
+    padding: 0;
     cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.btn-read-more-blog:hover {
-    color: #4b0082;
 }
