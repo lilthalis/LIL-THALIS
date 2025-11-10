@@ -532,3 +532,21 @@ body {
 .story-body p {
     margin-bottom: 2.5em; /* Espaço grande entre parágrafos GIGANTE */
 }
+/* style.css (Ajustes para os Ícones de Redes Sociais) */
+
+.story-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Aumenta um pouco o espaçamento entre os ícones */
+}
+
+.social-icon {
+    font-size: 1.5em; /* Aumenta o tamanho do ícone */
+    color: #ccc; /* Cor cinza sutil */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #4b0082; /* Lilás no hover */
+}
