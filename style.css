@@ -1,51 +1,69 @@
 /* ======================================= */
-/* ARQUIVO style.css COMPLETO E UNIFICADO  */
+/* ARQUIVO style.css - ESTILO LIL THALIS (Inspirado em LIL PEEP) */
 /* ======================================= */
 
-/* Reset Básico */
+/* 1. RESET BÁSICO E FONTES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ESTILO GERAL (Fundo Branco/Lilás) */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f8f8; /* Fundo branco suave */
+    font-family: 'Roboto', sans-serif; /* Fonte padrão limpa e legível */
+    background-color: #ffffff; /* Fundo branco puro, como no Lil Peep */
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* CONTAINER GERAL - Centraliza e define espaçamento "Gigante" */
+/* CONTAINER GERAL - Centraliza o conteúdo, mas permite seções full-width */
 .container {
-    max-width: 1200px;
+    max-width: 1400px; /* Largura estendida para telas grandes (ajuste fino) */
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* CABEÇALHO */
+/* SELETORES GERAIS DE CONTEÚDO (para esconder via JS) */
+.content-section {
+    /* Por padrão, não faz nada, mas ajuda o JS a selecionar */
+    display: block; 
+}
+
+/* TÍTULOS DE SEÇÃO */
+.section-heading {
+    font-size: 3.5em; 
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4b0082; /* Lilás escuro/roxo */
+    margin-bottom: 60px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* ======================================= */
+/* 2. CABEÇALHO E SEÇÃO DE BOAS-VINDAS */
+/* ======================================= */
+
 .main-header {
     text-align: center;
     padding: 80px 0 40px 0;
     background-color: #fff;
-    border-bottom: 1px solid #eee;
 }
 
 .site-title {
     font-size: 5em;
     font-weight: 700;
-    color: #4b0082; /* Lilás escuro */
+    color: #4b0082; 
     letter-spacing: 5px;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-/* SEÇÃO BEM-VINDO (LIL THALIS - O ARTISTA) */
 .welcome-section {
     background-color: #fff;
     text-align: center;
-    padding: 100px 0; /* Espaçamento interno gigante */
+    padding: 100px 0;
     border-bottom: 1px solid #eee;
 }
 
@@ -58,237 +76,214 @@ body {
     border: 5px solid #d8bfd8;
 }
 
-.welcome-text {
-    font-size: 1.8em;
-    color: #8a2be2; /* Lilás vibrante */
-    margin-bottom: 15px;
-    font-weight: 700;
+/* ======================================= */
+/* 3. SELETOR DE IDIOMAS E CARRINHO (FIXO) */
+/* ======================================= */
+
+.top-language-selector {
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco sutil */
+    padding: 5px 10px;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.section-heading {
-    font-size: 3.5em; /* Títulos de seção grandes */
-    text-transform: uppercase;
+.lang-option {
+    display: block;
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%; 
+    overflow: hidden;
+}
+
+.lang-flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lang-option.active {
+    box-shadow: 0 0 0 3px #4b0082; /* Borda roxa para ativo */
+}
+
+.cart-icon-link {
+    font-size: 1.4em;
     color: #4b0082;
-    margin-bottom: 60px;
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
 }
 
 /* ======================================= */
-/* ESTILO DO CARROSSEL (LIL PEEP STORY)    */
+/* 4. ESTILO DO CARROSSEL (ESTILO HISTÓRIA) */
 /* ======================================= */
 
 .carousel-section {
-    background-color: #f0e6fa; /* Fundo lilás suave da seção */
     padding: 0; 
+    background-color: #f0e6fa; /* Fundo lilás suave */
 }
 
 .carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: none;
-    margin: 0 auto;
-    overflow: hidden;
-    height: 700px; /* ALTURA GIGANTE DO CARROSSEL */
+    height: 700px; /* Altura do carrossel */
     background-color: #333;
+    /* (Mantenha o restante do seu CSS de carrossel: .carousel-item, .slide-bg, .caption, etc.) */
 }
 
-.carousel-item {
-    display: none; 
-    width: 100%;
-    height: 100%;
-    position: absolute; 
-    top: 0;
-    left: 0;
-    opacity: 0; 
-    /* Transição de Opacidade para Suavidade */
-    transition: opacity 1s ease-in-out; 
-}
-
-.carousel-item.active {
-    display: block; 
-    opacity: 1; 
-}
-
-/* IMAGEM DE FUNDO (Preenchendo e Escurecendo) */
-.slide-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha a tela */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    z-index: 0; 
-    filter: brightness(0.6); /* Escurece a imagem para o texto branco */
-}
-
-.carousel-content-wrapper {
-    position: relative;
-    z-index: 1; 
-    width: 100%;
-    height: 100%;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Alinha topo/roda-pé */
-    align-items: flex-start; /* Alinha o conteúdo à esquerda */
-}
-
-/* INFORMAÇÕES DO TOPO (Lil Thalis Music / 1/X) */
-.top-info {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* BLOCO DE HISTÓRIA/LEGENDA (Estilo Lil Peep) */
-.caption {
-    color: #fff;
-    text-align: left;
-    width: 60%; /* Largura da caixa de texto grande */
-    padding: 0 0 0 40px; 
-    margin-bottom: 50px; 
-}
-
-.caption-title {
-    font-size: 4.5em; /* Título bem maior */
-    margin-bottom: 20px;
-    line-height: 1.1;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
-}
-
-.caption-text {
-    font-size: 1.6em; /* Texto da história grande */
-    margin-bottom: 25px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-}
-
-.btn-read-more {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    font-weight: 400;
-    transition: background-color 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.btn-read-more:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-/* BOTÕES DE NAVEGAÇÃO (SETAS) - Minimalista, apenas texto */
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none; /* Sem fundo */
-    color: #fff;
-    border: none;
-    padding: 10px; 
-    cursor: pointer;
-    font-size: 1.2em; /* Texto pequeno */
-    opacity: 0.8; 
-    transition: opacity 0.3s ease;
-    z-index: 5;
-    text-transform: uppercase;
-}
-
-.prev-btn:hover, .next-btn:hover {
-    opacity: 1;
-}
-
-/* Posicionamento dos botões (Prev e Next lado a lado verticalmente) */
-.prev-btn {
-    right: 35px; 
-    top: calc(50% - 20px); 
-}
-
-.next-btn {
-    right: 35px;
-    top: calc(50% + 20px); 
-}
-
-/* Indicadores (Dots) - Mantidos, mas você pode removê-los se quiser o visual 100% Lil Peep */
-.carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    gap: 15px; 
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background-color: #fff;
-}
+/* ... (O SEU CSS DE CARROSSEL DEVE SER MANTIDO AQUI) ... */
 
 
 /* ======================================= */
-/* ESTILO DAS OUTRAS SEÇÕES (Produtos/Histórias) */
+/* 5. SEÇÃO DE PRODUTOS / COMO COMPRAR */
 /* ======================================= */
 
-.products-section, .about-section {
+.products-section {
     background-color: #fff;
     padding: 100px 0;
-    border-bottom: 1px solid #eee;
     text-align: center;
 }
+/* (Mantenha o grid e os estilos dos itens de produto aqui) */
 
-.product-grid, .story-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 60px;
-    margin-top: 60px;
+
+/* ======================================= */
+/* 6. GRADE DE HISTÓRIAS (3 COLUNAS) */
+/* ======================================= */
+
+.blog-section {
+    background-color: #fff;
+    padding: 100px 0;
 }
 
-.product-item, .story-item {
-    background-color: #f9f9f9;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 60px; /* Espaçamento grande entre os posts */
+    max-width: 1400px;
+    margin: 60px auto 0 auto;
+    padding: 0 40px; /* Padding nas laterais para telas grandes */
+}
+
+.blog-post-item {
+    text-align: left; 
+    padding: 0; 
     transition: transform 0.3s ease;
 }
 
-.product-item:hover, .story-item:hover {
-    transform: translateY(-10px);
+.blog-post-item:hover {
+     transform: translateY(-5px); /* Efeito sutil no hover */
 }
 
-.product-item img, .story-item img {
-    max-width: 100%;
+.post-main-image {
+    max-width: 100%; 
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 30px;
+    margin: 0 0 15px 0; 
+    border-radius: 5px; 
 }
 
-.product-item h3, .story-item h3 {
+.post-title-grid {
+    font-size: 1.9em; 
+    font-weight: 700;
+    color: #4b0082;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.post-summary-grid {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    /* Manter o limite de linhas para a pré-visualização */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.btn-read-more-grid {
+    font-size: 1.1em;
+    color: #8a2be2; 
+    text-decoration: underline;
+}
+
+/* ======================================= */
+/* 7. VISUALIZAÇÃO DA HISTÓRIA COMPLETA (ARTIGO) */
+/* ======================================= */
+
+.btn-back {
+    background: none;
+    border: 1px solid #ccc;
+    color: #4b0082;
+    padding: 10px 20px;
+    margin: 20px auto 40px auto; /* Centraliza o botão */
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+.full-story-article {
+    max-width: 900px; /* Larga, mas legível */
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.story-full-title {
+    font-size: 3.8em;
+    color: #4b0082;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Metadados (Data e Sociais) */
+.story-meta {
+    margin-bottom: 50px; /* Espaço GIGANTE abaixo dos metadados */
+}
+
+.story-date {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Ícones Sociais */
+.social-icon {
+    font-size: 1.5em; 
+    color: #ccc; 
+}
+
+/* Corpo do Texto GIGANTE */
+.story-body {
+    text-align: left; 
+    font-size: 1.5em; /* Fonte grande de leitura */
+    line-height: 2.3; /* Espaçamento entre linhas GIGANTE, como no Lil Peep */
+    color: #333;
+    padding: 0 20px;
+}
+
+.story-body p {
+    margin-bottom: 2.8em; /* Espaço enorme entre parágrafos */
+}
+
+.story-section-heading {
     font-size: 2.2em;
     color: #4b0082;
-    margin-bottom: 15px;
+    margin: 40px 0 20px 0;
+    text-align: left;
+    text-transform: uppercase;
 }
 
-.product-item p, .story-item p {
-    font-size: 1.3em;
-    color: #555;
-    margin-bottom: 25px;
-}
+/* ======================================= */
+/* 8. RODAPÉ */
+/* ======================================= */
 
-/* RODAPÉ */
 .main-footer {
     text-align: center;
     padding: 60px 0;
@@ -296,256 +291,3 @@ body {
     color: #fff;
     font-size: 1.2em;
 }
-
-/* ======================================= */
-/* AJUSTE: SEÇÃO DE BLOG PARA GRADE (3 COLUNAS) */
-/* ======================================= */
-
-.blog-section {
-    background-color: #fff;
-    padding: 100px 0; /* Aumenta o padding para espaçar as seções */
-    text-align: center; /* Centraliza títulos da seção */
-}
-
-/* Container do Post (Vai segurar a grade) */
-.blog-posts-grid {
-    display: grid;
-    /* Define 3 colunas flexíveis com um espaço (gap) generoso */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 40px; 
-    max-width: 1200px; /* Alarga para caber 3 colunas */
-    margin: 60px auto 0 auto; /* Centraliza a grade */
-}
-
-/* Estilo do Item Individual (Postagem) */
-.blog-post-item {
-    text-align: left; /* Alinha o texto dentro do item à esquerda */
-    padding: 10px;
-}
-
-.post-main-image {
-    max-width: 100%; /* Imagem preenche a coluna */
-    height: auto;
-    /* Remove a margem 'auto' para o grid funcionar */
-    margin: 0 0 15px 0; 
-    display: block;
-    border-radius: 5px; /* Suaviza as bordas da imagem */
-}
-
-/* Estilo dos Títulos e Textos no Item de Grade */
-.post-title-grid {
-    font-size: 1.8em; /* Título um pouco menor para caber na coluna */
-    color: #4b0082;
-    margin: 10px 0;
-    line-height: 1.2;
-}
-
-.post-summary-grid {
-    font-size: 1em;
-    line-height: 1.5;
-    color: #555;
-    /* Limita o resumo a algumas linhas */
-    display: -webkit-box;
-    -webkit-line-clamp: 4; /* Mostrará no máximo 4 linhas */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.btn-read-more-grid {
-    display: inline-block;
-    background: none;
-    color: #8a2be2;
-    border: none;
-    text-decoration: underline;
-    font-size: 1em;
-    padding: 0;
-    cursor: pointer;
-}
-
-/* style.css */
-
-/* CONTAINER GERAL - Vamos aumentar para monitores maiores */
-.container {
-    max-width: 1400px; /* Aumente a largura máxima */
-    margin: 0 auto; 
-    padding: 40px 20px; 
-}
-
-/* Opcional: Se quiser que a seção de histórias seja ainda mais larga */
-.blog-posts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 40px; 
-    /* Remova o max-width para que ele se ajuste ao container principal, que é 1400px agora */
-    /* max-width: 1200px; <--- REMOVA ESTA LINHA OU COMENTE */
-    margin: 60px auto 0 auto; 
-}
-
-/* style.css */
-
-/* Estilo do Item Individual (Postagem) */
-.blog-post-item {
-    text-align: left; 
-    /* Remove padding para deixar mais próximo da borda, como no exemplo */
-    padding: 0; 
-    /* Adiciona margem na parte inferior para separar as linhas futuras de grade, se houver */
-    margin-bottom: 30px; 
-}
-
-.post-main-image {
-    max-width: 100%; 
-    height: auto;
-    margin: 0 0 10px 0; /* Diminui o espaço entre a imagem e o título/texto */
-    display: block;
-    border-radius: 5px; 
-}
-
-.post-title-grid {
-    font-size: 1.8em; 
-    color: #4b0082;
-    margin: 15px 0 10px 0; /* Espaçamento ajustado */
-    line-height: 1.2;
-}
-/* style.css (Continuação) */
-
-/* Estilo do botão Voltar */
-.btn-back {
-    background: none;
-    border: 1px solid #ccc;
-    color: #4b0082;
-    padding: 10px 20px;
-    margin: 20px 0 40px 0;
-    cursor: pointer;
-    font-size: 1.1em;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn-back:hover {
-    background-color: #f0e6fa;
-}
-
-/* Estilo da História Completa (Full Story) */
-.full-story-article {
-    max-width: 800px; /* Limita a largura do texto para facilitar a leitura (como no Peep) */
-    margin: 0 auto;
-    text-align: center;
-    padding: 50px 0;
-}
-
-.story-cover-image {
-    max-width: 300px; /* Imagem/vinil no topo */
-    height: auto;
-    margin-bottom: 30px;
-}
-
-.story-full-title {
-    font-size: 3.5em;
-    color: #4b0082;
-    margin-bottom: 5px;
-}
-
-.story-date {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-.story-body {
-    text-align: left; /* O TEXTO GIGANTE VAI AQUI, ALINHADO À ESQUERDA */
-    font-size: 1.4em; /* Fonte grande */
-    line-height: 2; /* Espaçamento entre linhas GIGANTE (igual ao exemplo) */
-    color: #333;
-    padding: 0 20px;
-}
-
-.story-body p {
-    margin-bottom: 2em; /* Espaço grande entre parágrafos */
-}
-
-.story-section-heading {
-    font-size: 2em;
-    color: #4b0082;
-    margin: 30px 0 15px 0;
-    text-align: center;
-}
-/* style.css (Ajustes para o Artigo de História Completa) */
-
-/* Centraliza o Título e Metadados */
-.story-full-title {
-    font-size: 3.5em;
-    color: #4b0082;
-    margin-bottom: 5px;
-}
-
-.story-meta {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.story-date {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-/* Estilo das Redes Sociais (F, T, P, E) */
-.story-social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.social-icon {
-    font-size: 1.2em;
-    color: #ccc; /* Cor cinza sutil */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social-icon:hover {
-    color: #4b0082; /* Lilás no hover */
-}
-
-/* Estilo do Subtítulo (se for usar) */
-.story-subtitle {
-    font-size: 1.1em;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    font-style: italic;
-    max-width: 600px; /* Limita a largura para a citação */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Estilo do Corpo do Texto (GIGANTE) */
-.story-body {
-    text-align: left; 
-    font-size: 1.4em; 
-    line-height: 2.2; /* Aumente o espaçamento entre linhas para o efeito "gigante" */
-    color: #333;
-    padding: 0 20px;
-}
-
-.story-body p {
-    margin-bottom: 2.5em; /* Espaço grande entre parágrafos GIGANTE */
-}
-/* style.css (Ajustes para os Ícones de Redes Sociais) */
-
-.story-social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Aumenta um pouco o espaçamento entre os ícones */
-}
-
-.social-icon {
-    font-size: 1.5em; /* Aumenta o tamanho do ícone */
-    color: #ccc; /* Cor cinza sutil */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social-icon:hover {
-    color: #4b0082; /* Lilás no hover */
