@@ -123,23 +123,71 @@ body {
 /* 4. ESTILO DO CARROSSEL (ESTILO HISTÓRIA) */
 /* ======================================= */
 
+/* ======================================= */
+/* CORREÇÃO 1: CARROSSEL BÁSICO */
+/* ======================================= */
+
 .carousel-section {
     padding: 0; 
-    background-color: #f0e6fa; /* Fundo lilás suave */
+    background-color: #f0f0f0; /* Fundo cinza claro para contraste */
 }
 
 .carousel-container {
-    height: 700px; /* Altura do carrossel */
-    background-color: #333;
-    /* (Mantenha o restante do seu CSS de carrossel: .carousel-item, .slide-bg, .caption, etc.) */
+    height: 700px; /* Mantenha a altura que você definiu */
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* CRUCIAL: Impede que os slides vazem */
 }
 
-/* ... (O SEU CSS DE CARROSSEL DEVE SER MANTIDO AQUI) ... */
+.carousel {
+    display: flex;
+    /* transition: transform 0.5s ease-in-out; <--- Se você usa JS para animação */
+}
 
+.slide {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    position: relative;
+}
+
+.slide-active {
+    opacity: 1;
+}
+
+/* Garante que o texto fique no lugar e ocupe a largura total */
+.caption {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+    max-width: 60%; /* Limita a largura da caixa de texto */
+    padding: 20px;
+}
 
 /* ======================================= */
-/* 5. SEÇÃO DE PRODUTOS / COMO COMPRAR */
+/* CORREÇÃO 2: ESTILO DOS LINKS (QUE ESTÃO VAZANDO) */
 /* ======================================= */
+
+/* O texto "First phase of the journey" e "New era" está vazando. 
+   Isso parece ser do código que você usou para listar os slides abaixo do carrossel.
+   Você precisa garantir que este texto esteja DENTRO do container ou tenha um estilo de bloco. */
+
+/* Se este é um bloco separado, oculte ele para limpar o visual: */
+.slide-list-description { 
+    display: none; /* Se for apenas uma lista de links feia, oculte */
+}
+/* OU, se for um texto que precisa existir, ele deve ser formatado como bloco: */
+.carousel-description-block {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.2em;
+    color: #4b0082;
+    display: block; /* Garante que ele se comporte como um bloco */
+}
+    padding: 0; 
+    background-color: #f0e6fa; /* Fundo lilás suave */
+
 
 .products-section {
     background-color: #fff;
