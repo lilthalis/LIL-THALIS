@@ -179,3 +179,56 @@ openStoryBtns.forEach(btn => {
         history.pushState(null, '', window.location.pathname); 
     });
 });
+// script.js (Parte de Seletores)
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (Seletores do Carrossel e Histórias) ...
+    
+    // --- NOVO: Seletores para as seções principais que devem ser escondidas ---
+    const sectionsToHide = [
+        document.getElementById('main-carousel-section'),
+        document.getElementById('products-section'),
+        document.getElementById('main-footer')
+        // Adicione aqui qualquer outra seção principal que não deve aparecer na história
+    ].filter(el => el != null); // Filtra elementos nulos para segurança
+
+    // Seletores da Seção de Histórias
+    const blogGridView = document.getElementById('blog-grid-view');
+    const fullStoryView = document.getElementById('full-story-view');
+    // ... (outros seletores) ...
+
+
+    // Função para mostrar a história completa
+    function showFullStory(storyId) {
+        // ... (código existente) ...
+
+        // 1. Esconde a grade e as OUTRAS seções de conteúdo
+        blogGridView.style.display = 'none';
+        sectionsToHide.forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // 2. Mostra APENAS a visualização completa
+        fullStoryView.style.display = 'block';
+
+        // ... (restante da lógica de carregamento do template) ...
+    }
+
+    // Função para voltar à grade
+    backToGridBtn.addEventListener('click', () => {
+        fullStoryView.style.display = 'none';
+        
+        // 1. Mostra a grade de posts
+        blogGridView.style.display = 'grid'; // Volta para o display: grid
+
+        // 2. Mostra as OUTRAS seções de conteúdo principal
+        sectionsToHide.forEach(section => {
+            // Volta ao display padrão (que pode ser 'block', ou se for grid, defina o correto)
+            section.style.display = ''; 
+        });
+
+        blogGridView.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // ... (restante do código) ...
+});
