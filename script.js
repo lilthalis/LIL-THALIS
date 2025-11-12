@@ -43,46 +43,34 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
 
 
-    // =======================================
+ // =======================================
     // 2. FUNCIONALIDADE 'LEIA MAIS' / VOLTAR
     // =======================================
-    const blogGridView = document.getElementById('blog-grid-view');
-    const fullStoryView = document.getElementById('full-story-view');
-    const storyContentArea = document.getElementById('story-content-area');
-    const backToGridBtn = document.getElementById('back-to-grid');
-    const openStoryBtns = document.querySelectorAll('.open-story-btn, .btn-read-more');
+    
+    // ... (variáveis como blogGridView, fullStoryView, storyContentArea)
 
-    // Seções principais que devem ser escondidas ao abrir a história
-    const sectionsToHide = [
-        document.getElementById('main-carousel-section'),
-        document.getElementById('products-section'),
-        document.getElementById('main-footer')
-    ].filter(el => el != null); 
+    // CORREÇÃO AQUI: Certifique-se de selecionar BOTH os botões da GRADE e do CARROSSEL
+    const openStoryBtns = document.querySelectorAll('.open-story-btn, .btn-read-more'); 
 
-    // Função para mostrar a história completa
-    function showFullStory(storyId) {
-        const template = document.getElementById(storyId);
-        if (template) {
-            // Clona o conteúdo do template
-            const storyClone = document.importNode(template.content, true);
-            storyContentArea.innerHTML = ''; // Limpa a área anterior
-            storyContentArea.appendChild(storyClone); // Insere o novo conteúdo
-            
-            // 1. Esconde a grade e as OUTRAS seções de conteúdo
-            blogGridView.style.display = 'none';
-            sectionsToHide.forEach(section => {
-                section.style.display = 'none';
-            });
+    // ... (código da função showFullStory)
 
-            // 2. Mostra APENAS a visualização completa
-            fullStoryView.style.display = 'block';
+    // Ouvintes de evento para os botões "Leia Mais"
+    openStoryBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            const storyId = btn.getAttribute('data-story-id');
             
-            // 3. Rola para o topo da página para ver a história
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-            // 4. Limpa a hashtag da URL (Correção de problema anterior)
-            history.pushState(null, '', window.location.pathname);
-        }
+            // Verifica se o template da história existe:
+            if (document.getElementById(storyId)) {
+                showFullStory(storyId);
+            } else {
+                console.error(`Template da história não encontrado: #${storyId}`);
+                alert(`Erro: A história com o ID "${storyId}" não foi encontrada no HTML. Certifique-se de que o <template id="${storyId}"> existe.`);
+            }
+        });
+    });
+
+    // ... (Ouvinte para o backToGridBtn)
     }
 
     // Ouvintes de evento para os botões "Leia Mais"
@@ -110,3 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
         blogGridView.scrollIntoView({ behavior: 'smooth' });
     });
 });
+// =======================================
+    // 3. FUNCIONALIDADE SELETOR DE IDIOMA
+    // =======================================
+    const langOptions = document.querySelectorAll('.lang-option');
+
+    langOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault(); // Impede o link de navegar (recuperar a página)
+
+            // 1. Remove a classe 'active' de todos
+            langOptions.forEach(opt => opt.classList.remove('active'));
+
+            // 2. Adiciona a classe 'active' apenas no elemento clicado
+            option.classList.add('active');
+            
+            // Aqui você adicionaria a lógica real de tradução, 
+            // mas por enquanto, a mudança visual já está resolvida.
+            // Exemplo: console.log(`Idioma mudado para: ${option.getAttribute('data-lang')}`);
+        });
+    });
