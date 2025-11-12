@@ -1,5 +1,5 @@
 /* ======================================= */
-/* ARQUIVO style.css - ESTILO LIL THALIS (Inspirado em LIL PEEP) */
+/* ARQUIVO style.css - ESTILO IDÊNTICO LIL PEEP/LIL THALIS */
 /* ======================================= */
 
 /* 1. RESET BÁSICO E FONTES */
@@ -10,39 +10,37 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Fonte padrão limpa e legível */
-    background-color: #ffffff; /* Fundo branco puro, como no Lil Peep */
+    font-family: 'Roboto', sans-serif; 
+    background-color: #ffffff; 
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* CONTAINER GERAL - Centraliza o conteúdo, mas permite seções full-width */
+/* CONTAINER GERAL (Permite conteúdo full-width, mas centraliza o principal) */
 .container {
-    max-width: 1400px; /* Largura estendida para telas grandes (ajuste fino) */
-    margin: 0 auto;
-    padding: 40px 20px;
+    max-width: 1500px; 
+    margin: 0 auto; 
+    padding: 60px 40px; /* Padding GIGANTE */
 }
 
-/* SELETORES GERAIS DE CONTEÚDO (para esconder via JS) */
 .content-section {
-    /* Por padrão, não faz nada, mas ajuda o JS a selecionar */
-    display: block; 
+    padding: 150px 0; /* Padding GIGANTE para todas as seções */
 }
 
-/* TÍTULOS DE SEÇÃO */
+/* TÍTULOS GIGANTES */
 .section-heading {
-    font-size: 3.5em; 
-    font-weight: 700;
+    font-size: 5em; 
+    font-weight: 900; 
     text-transform: uppercase;
-    color: #4b0082; /* Lilás escuro/roxo */
-    margin-bottom: 60px;
+    color: #4b0082; 
+    margin-bottom: 120px; 
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 5px; 
 }
 
 /* ======================================= */
-/* 2. CABEÇALHO E SEÇÃO DE BOAS-VINDAS */
+/* 2. CABEÇALHO E SELETOR DE IDIOMAS */
 /* ======================================= */
 
 .main-header {
@@ -60,26 +58,7 @@ body {
     margin-bottom: 20px;
 }
 
-.welcome-section {
-    background-color: #fff;
-    text-align: center;
-    padding: 100px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.profile-pic-large {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 40px;
-    border: 5px solid #d8bfd8;
-}
-
-/* ======================================= */
-/* 3. SELETOR DE IDIOMAS E CARRINHO (FIXO) */
-/* ======================================= */
-
+/* SELETOR FIXO */
 .top-language-selector {
     position: fixed; 
     top: 20px; 
@@ -88,7 +67,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px; 
-    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco sutil */
+    background-color: rgba(255, 255, 255, 0.95); 
     padding: 5px 10px;
     border-radius: 50px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -102,14 +81,8 @@ body {
     overflow: hidden;
 }
 
-.lang-flag {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .lang-option.active {
-    box-shadow: 0 0 0 3px #4b0082; /* Borda roxa para ativo */
+    box-shadow: 0 0 0 3px #4b0082; 
 }
 
 .cart-icon-link {
@@ -120,28 +93,24 @@ body {
 }
 
 /* ======================================= */
-/* 4. ESTILO DO CARROSSEL (ESTILO HISTÓRIA) */
+/* 3. CARROSSEL (FULL-WIDTH E LIMPO) */
 /* ======================================= */
-
-/* ======================================= */
-/* CORREÇÃO 1: CARROSSEL BÁSICO */
-/* ======================================= */
-
 .carousel-section {
     padding: 0; 
-    background-color: #f0f0f0; /* Fundo cinza claro para contraste */
+    background-color: #f0f0f0; 
 }
 
 .carousel-container {
-    height: 700px; /* Mantenha a altura que você definiu */
+    height: 800px; /* Altura GIGANTE */
     width: 100%;
     position: relative;
-    overflow: hidden; /* CRUCIAL: Impede que os slides vazem */
+    overflow: hidden; /* CRUCIAL para não vazar slides */
 }
 
+/* Estilos de slide e animação (manter o seu JS) */
 .carousel {
     display: flex;
-    /* transition: transform 0.5s ease-in-out; <--- Se você usa JS para animação */
+    /* transition: transform 0.5s ease-in-out; */
 }
 
 .slide {
@@ -155,64 +124,52 @@ body {
     opacity: 1;
 }
 
-/* Garante que o texto fique no lugar e ocupe a largura total */
+.slide-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .caption {
     position: absolute;
-    bottom: 50px;
-    left: 50px;
+    bottom: 80px; /* Afasta da borda */
+    left: 80px; 
     color: white;
-    max-width: 60%; /* Limita a largura da caixa de texto */
-    padding: 20px;
+    max-width: 50%; 
 }
 
-/* ======================================= */
-/* CORREÇÃO 2: ESTILO DOS LINKS (QUE ESTÃO VAZANDO) */
-/* ======================================= */
-
-/* O texto "First phase of the journey" e "New era" está vazando. 
-   Isso parece ser do código que você usou para listar os slides abaixo do carrossel.
-   Você precisa garantir que este texto esteja DENTRO do container ou tenha um estilo de bloco. */
-
-/* Se este é um bloco separado, oculte ele para limpar o visual: */
-.slide-list-description { 
-    display: none; /* Se for apenas uma lista de links feia, oculte */
-}
-/* OU, se for um texto que precisa existir, ele deve ser formatado como bloco: */
-.carousel-description-block {
-    text-align: center;
-    padding: 20px 0;
+.album-tag {
     font-size: 1.2em;
-    color: #4b0082;
-    display: block; /* Garante que ele se comporte como um bloco */
+    margin-bottom: 10px;
 }
-    padding: 0; 
-    background-color: #f0e6fa; /* Fundo lilás suave */
 
-
-.products-section {
-    background-color: #fff;
-    padding: 100px 0;
-    text-align: center;
+.slide-title {
+    font-size: 4em; /* Título GIGANTE */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-/* (Mantenha o grid e os estilos dos itens de produto aqui) */
 
+.slide-description {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
 
 /* ======================================= */
-/* 6. GRADE DE HISTÓRIAS (3 COLUNAS) */
+/* 4. GRADE DE HISTÓRIAS (3 COLUNAS) */
 /* ======================================= */
-
-.blog-section {
-    background-color: #fff;
-    padding: 100px 0;
-}
 
 .blog-posts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 60px; /* Espaçamento grande entre os posts */
+    gap: 60px; 
     max-width: 1400px;
     margin: 60px auto 0 auto;
-    padding: 0 40px; /* Padding nas laterais para telas grandes */
+    padding: 0 40px; 
 }
 
 .blog-post-item {
@@ -221,45 +178,22 @@ body {
     transition: transform 0.3s ease;
 }
 
-.blog-post-item:hover {
-     transform: translateY(-5px); /* Efeito sutil no hover */
-}
-
-.post-main-image {
-    max-width: 100%; 
-    height: auto;
-    margin: 0 0 15px 0; 
-    border-radius: 5px; 
-}
-
 .post-title-grid {
     font-size: 1.9em; 
     font-weight: 700;
     color: #4b0082;
     margin: 10px 0;
-    line-height: 1.2;
 }
 
 .post-summary-grid {
     font-size: 1.1em;
     line-height: 1.6;
     color: #555;
-    /* Manter o limite de linhas para a pré-visualização */
-    display: -webkit-box;
-    -webkit-line-clamp: 4; 
-    -webkit-box-orient: vertical;
-    overflow: hidden;
     margin-bottom: 20px;
 }
 
-.btn-read-more-grid {
-    font-size: 1.1em;
-    color: #8a2be2; 
-    text-decoration: underline;
-}
-
 /* ======================================= */
-/* 7. VISUALIZAÇÃO DA HISTÓRIA COMPLETA (ARTIGO) */
+/* 5. VISUALIZAÇÃO DA HISTÓRIA COMPLETA (ARTIGO GIGANTE) */
 /* ======================================= */
 
 .btn-back {
@@ -267,16 +201,13 @@ body {
     border: 1px solid #ccc;
     color: #4b0082;
     padding: 10px 20px;
-    margin: 20px auto 40px auto; /* Centraliza o botão */
+    margin: 40px auto;
     display: block;
     width: fit-content;
-    cursor: pointer;
-    font-size: 1.1em;
-    border-radius: 5px;
 }
 
 .full-story-article {
-    max-width: 900px; /* Larga, mas legível */
+    max-width: 900px; 
     margin: 0 auto;
     text-align: center;
     padding: 50px 0;
@@ -286,38 +217,22 @@ body {
     font-size: 3.8em;
     color: #4b0082;
     margin-bottom: 10px;
-    text-transform: uppercase;
 }
 
-/* Metadados (Data e Sociais) */
 .story-meta {
-    margin-bottom: 50px; /* Espaço GIGANTE abaixo dos metadados */
+    margin-bottom: 50px; 
 }
 
-.story-date {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 10px;
-    display: block;
-}
-
-/* Ícones Sociais */
-.social-icon {
-    font-size: 1.5em; 
-    color: #ccc; 
-}
-
-/* Corpo do Texto GIGANTE */
 .story-body {
     text-align: left; 
-    font-size: 1.5em; /* Fonte grande de leitura */
-    line-height: 2.3; /* Espaçamento entre linhas GIGANTE, como no Lil Peep */
+    font-size: 1.6em; 
+    line-height: 2.5; /* Espaçamento GIGANTE */
     color: #333;
     padding: 0 20px;
 }
 
 .story-body p {
-    margin-bottom: 2.8em; /* Espaço enorme entre parágrafos */
+    margin-bottom: 4em; /* Espaço GIGANTE entre parágrafos */
 }
 
 .story-section-heading {
@@ -329,12 +244,12 @@ body {
 }
 
 /* ======================================= */
-/* 8. RODAPÉ */
+/* 6. RODAPÉ */
 /* ======================================= */
 
 .main-footer {
     text-align: center;
-    padding: 60px 0;
+    padding: 80px 0; /* Padding GIGANTE */
     background-color: #4b0082;
     color: #fff;
     font-size: 1.2em;
