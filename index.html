@@ -1,153 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIL THALIS - Official Site</title>
-      <!-- FAVICON -->
-<link rel="icon" type="image/x-icon" href="Albuns/even_if_you_dont_love_me.jpg">
-<link rel="apple-touch-icon" href="Icon/OIG3.MPuV7bV.jpg">
-<meta property="og:image" content="logo-vinil.png">
-<meta name="theme-color" content="#6d3bdc">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIL THALIS - Official Site</title>
+  
+  <link rel="icon" type="image/x-icon" href="Albuns/even_if_you_dont_love_me.jpg">
+  <link rel="apple-touch-icon" href="Icon/OIG3.MPuV7bV.jpg">
+  <meta property="og:image" content="logo-vinil.png">
+  <meta name="theme-color" content="#6d3bdc">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    /* 🎨 Estilo do Carrossel */
+    .carousel-container {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .carousel {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    /* Botões de navegação */
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .carousel-nav.prev { left: 15px; }
+    .carousel-nav.next { right: 15px; }
+
+    /* Indicadores */
+    .carousel-indicators {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-indicators button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background: #bbb;
+      cursor: pointer;
+    }
+    .carousel-indicators button.active {
+      background: #6d3bdc;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="top-language-selector">
-        <a href="#" class="lang-option active" data-lang="en">
-            <img src="BandeiraUk/bandeira uk.jpg" alt="English" class="lang-flag">
-        </a>
-        <a href="#" class="lang-option" data-lang="pt">
-            <img src="BandeiraBrasil/Brasil Bandeira.jpg" alt="Português" class="lang-flag">
-        </a>
-        
-        <a href="carrinho.html" class="cart-icon-link">
-    <i class="fas fa-shopping-basket"></i> 
-</a>
+  <header class="main-header">
+    <div class="container">
+      <h1 class="site-title">LIL THALIS</h1>
     </div>
+  </header>
 
-    <header class="main-header">
-        <div class="container">
-            <h1 class="site-title">LIL THALIS</h1>
+  <!-- 🎵 Carrossel -->
+  <section class="carousel-section content-section" id="main-carousel-section">
+    <div class="carousel-container">
+      <div class="carousel" id="music-carousel"> 
+        
+        <div class="slide">
+          <img src="caminho/para/fundo-slide1.jpg" alt="Primeira Fase">
+          <div class="caption">
+            <p>LIL THALIS MUSIC 1/3</p>
+            <h2>Primeira fase da jornada</h2>
+            <p>O começo da história e primeiros passos na cena musical.</p>
+          </div>
         </div>
-    </header>
 
-    <section class="carousel-section content-section" id="main-carousel-section">
-        <div class="carousel-container">
-            <div class="carousel" id="music-carousel"> 
-                
-                <div class="slide slide-active">
-                    <img src="caminho/para/fundo-slide1.jpg" alt="Primeira Fase" class="slide-bg">
-                    <div class="caption">
-                        <p class="album-tag">LIL THALIS MUSIC 1/3</p>
-                        <h2 class="slide-title">Primeira fase da jornada</h2>
-                        <p class="slide-description">O começo da história e primeiros passos na cena musical.</p>
-                        <button class="btn-read-more" data-story-id="story-1">Ver Detalhes</button> 
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="caminho/para/fundo-slide2.jpg" alt="Nova Era" class="slide-bg">
-                    <div class="caption">
-                        <p class="album-tag">LIL THALIS MUSIC 2/3</p>
-                        <h2 class="slide-title">Nova Era</h2>
-                        <p class="slide-description">A evolução do som e a descoberta de novas influências.</p>
-                        <button class="btn-read-more" data-story-id="story-2">Ver Detalhes</button> 
-                    </div>
-                </div>
-                
-                <div class="slide">
-                    <img src="caminho/para/fundo-slide3.jpg" alt="O Futuro" class="slide-bg">
-                    <div class="caption">
-                        <p class="album-tag">LIL THALIS MUSIC 3/3</p>
-                        <h2 class="slide-title">O futuro</h2>
-                        <p class="slide-description">Cada música é uma memória e a promessa de novos projetos.</p>
-                        <button class="btn-read-more" data-story-id="story-3">Ver Detalhes</button> 
-                    </div>
-                </div>
-            </div>
-            
-            <button class="carousel-nav prev">Prev</button>
-            <button class="carousel-nav next">Next</button>
-            <div class="slide-indicator">1/3</div>
+        <div class="slide">
+          <img src="caminho/para/fundo-slide2.jpg" alt="Nova Era">
+          <div class="caption">
+            <p>LIL THALIS MUSIC 2/3</p>
+            <h2>Nova Era</h2>
+            <p>A evolução do som e a descoberta de novas influências.</p>
+          </div>
         </div>
-    </section>
-
-    <section class="products-section content-section" id="products-section">
-        <div class="container">
-            <h2 class="section-heading">COMO COMPRAR</h2>
-            </div>
-    </section>
-
-    <section class="blog-section content-section">
-        <div class="container">
-            
-            <h2 class="section-heading">LIL THALIS: HISTÓRIAS E FASES</h2>
-            
-            <div class="blog-posts-grid" id="blog-grid-view">
-                
-                <article class="blog-post-item">
-                    <img src="Albuns/even_if_you_dont_love_me.jpg" alt="Fase 1" class="post-main-image">
-                    <h3 class="post-title-grid">Even If You Dont Love Me (O começo de tudo)</h3>
-                    <p class="post-summary-grid">Esta história detalha o início da carreira, as influências e como a música se tornou a fuga principal...</p>
-                    <a href="#" class="btn-read-more-grid open-story-btn" data-story-id="story-1">Leia mais</a>
-                </article>
-
-                <article class="blog-post-item">
-                    <img src="caminho/para/imagem-post-2.jpg" alt="Escritos" class="post-main-image">
-                    <h3 class="post-title-grid">OS ESCRITOS DE THALIS</h3>
-                    <p class="post-summary-grid">Um olhar sobre os cadernos originais, poemas e letras nunca lançadas que mostram a emoção crua...</p>
-                    <a href="#" class="btn-read-more-grid open-story-btn" data-story-id="story-2">Leia mais</a>
-                </article>
-
-                <article class="blog-post-item">
-                    <img src="caminho/para/imagem-post-3.jpg" alt="Músicas" class="post-main-image">
-                    <h3 class="post-title-grid">MÚSICAS QUE USAMOS PARA OUVIR</h3>
-                    <p class="post-summary-grid">Uma lista comentada das músicas de infância e adolescência que serviram como pilares para a sonoridade...</p>
-                    <a href="#" class="btn-read-more-grid open-story-btn" data-story-id="story-3">Leia mais</a>
-                </article>
-                
-            </div>
-            
-            <div id="full-story-view" style="display: none;">
-                <button id="back-to-grid" class="btn-back">← Voltar para as Histórias</button>
-                <div id="story-content-area">
-                    </div>
-            </div>
+        
+        <div class="slide">
+          <img src="caminho/para/fundo-slide3.jpg" alt="O Futuro">
+          <div class="caption">
+            <p>LIL THALIS MUSIC 3/3</p>
+            <h2>O futuro</h2>
+            <p>Cada música é uma memória e a promessa de novos projetos.</p>
+          </div>
         </div>
-    </section>
+      </div>
+      
+      <!-- Botões -->
+      <button class="carousel-nav prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-nav next"><i class="fas fa-chevron-right"></i></button>
+      
+      <!-- Indicadores -->
+      <div class="carousel-indicators" id="carousel-indicators"></div>
+    </div>
+  </section>
 
-    <footer class="main-footer" id="main-footer">
-        © 2025 LIL THALIS. Todos os direitos reservados.
-    </footer>
+  <footer class="main-footer">
+    © 2025 LIL THALIS. Todos os direitos reservados.
+  </footer>
 
-    <template id="story-template-1">
-        <div class="full-story-article">
-            <img src="Albuns/even_if_you_dont_love_me.jpg" alt="Capa da História 1" class="story-cover-image">
-            <h1 class="story-full-title">Even If You Dont Love Me (O começo de tudo)</h1>
-            
-            <div class="story-meta">
-                <p class="story-date">SET 18, 2024</p>
-                <div class="story-social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a> 
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> 
-                    <a href="#" class="social-icon"><i class="fab fa-soundcloud"></i></a> 
-                    <a href="mailto:contato@thalis.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            
-            <p class="story-subtitle">"A música se tornou o único refúgio seguro, a única coisa que podia manter a paz."</p>
+  <script>
+    // 🎬 Script do Carrossel
+    const carousel = document.getElementById("music-carousel");
+    const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.querySelector(".carousel-nav.prev");
+    const nextBtn = document.querySelector(".carousel-nav.next");
+    const indicators = document.getElementById("carousel-indicators");
 
-            <div class="story-body">
-                <p>A jornada de Lil Thalis, ao contrário de muitos na cena, não começou com um estrondo, mas com o silêncio. Um silêncio profundo que ele precisava preencher. Para Thalis, a música não era apenas arte; era uma válvula de escape essencial. O primeiro computador, o primeiro software de produção rudimentar e os fones de ouvido velhos se tornaram o santuário onde ele construiu suas primeiras batidas.</p>
-                
-                <h2 class="story-section-heading">O Encontro com a 'Primeira Fase'</h2>
-                <p>Após meses enviando demos e batidas cruas para produtores desconhecidos via SoundCloud e e-mail, ele começou a receber respostas. A colaboração com produtores internacionais e o feedback positivo transformaram a dúvida em convicção. A arte do álbum, com o carro sob as luzes neon, simboliza a fuga noturna e a liberdade recém-descoberta que a música proporcionava.</p>
-            </div>
-        </div>
-    </template>
-    <script src="script.js"></script>
+    let index = 0;
+
+    // Criar indicadores
+    slides.forEach((_, i) => {
+      const btn = document.createElement("button");
+      if(i === 0) btn.classList.add("active");
+      btn.addEventListener("click", () => goToSlide(i));
+      indicators.appendChild(btn);
+    });
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      document.querySelectorAll(".carousel-indicators button").forEach((btn, i) => {
+        btn.classList.toggle("active", i === index);
+      });
+    }
+
+    function goToSlide(i) {
+      index = i;
+      updateCarousel();
+    }
+
+    prevBtn.addEventListener("click", () => {
+      index = (index > 0) ? index - 1 : slides.length - 1;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      index = (index < slides.length - 1) ? index + 1 : 0;
+      updateCarousel();
+    });
+
+    // Autoplay opcional
+    setInterval(() => {
+      index = (index < slides.length - 1) ? index + 1 : 0;
+      updateCarousel();
+    }, 5000);
+  </script>
 </body>
 </html>
