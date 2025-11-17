@@ -1,33 +1,30 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Lil Thalis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- CSS default = white -->
-  <link id="theme-link" rel="stylesheet" href="{{ url_for('static', filename='css/white.css') }}">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <header>
     <h1>Lil Thalis</h1>
-    <button id="toggleBtn">🔄</button>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/music">Music</a>
+      <a href="/about">About</a>
+    </nav>
   </header>
-
-  <section class="hero">
-    <img src="{{ url_for('static', filename='img/thalis-hero.jpg') }}" alt="Lil Thalis">
-    <p>Tapes & Merch disponíveis agora.</p>
-  </section>
-
-  <section class="music">
-    <h2>Música</h2>
-    <ul id="tracklist"><!-- será preenchido via JS --></ul>
-  </section>
-
+  <main>
+    <section class="hero">
+      <img src="/static/thalis.jpg" alt="Lil Thalis">
+      <h2>Uma homenagem visual ao Lil Peep</h2>
+    </section>
+    <section class="content">
+      <p>Confira músicas, vídeos e novidades do Lil Thalis!</p>
+    </section>
+  </main>
   <footer>
-    <small>© 2024 Lil Thalis. All rights reserved.</small>
+    <p>© 2025 Lil Thalis</p>
   </footer>
-
-  <script src="{{ url_for('static', filename='js/theme-toggle.js') }}"></script>
 </body>
 </html>
